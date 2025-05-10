@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="service-grid-container">
+      <style>
+        /* Service Grid Styles */
+        .service-grid-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 2rem 1rem;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .service-header {
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .service-header h2 {
+          font-size: 2.5rem;
+          color: #333;
+          margin-bottom: 1rem;
+          font-weight: 600;
+        }
+
+        .service-header p {
+          font-size: 1.1rem;
+          color: #666;
+          max-width: 700px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .service-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+        }
+
+        .service-card {
+          background: #fff;
+          border-radius: 10px;
+          padding: 1.5rem;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+
+        .service-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+          margin-bottom: 1rem;
+          color: #4361ee;
+        }
+
+        .service-card h3 {
+          font-size: 1.25rem;
+          margin-bottom: 0.75rem;
+          color: #333;
+          font-weight: 600;
+        }
+
+        .service-card p {
+          font-size: 0.95rem;
+          color: #666;
+          margin-bottom: 1.25rem;
+          line-height: 1.5;
+          flex-grow: 1;
+        }
+
+        .know-more-btn {
+          display: inline-block;
+          padding: 0.5rem 1.25rem;
+          background-color: #4361ee;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          font-weight: 500;
+          font-size: 0.9rem;
+          transition: background-color 0.3s ease;
+          text-align: center;
+          align-self: flex-start;
+        }
+
+        .know-more-btn:hover {
+          background-color: #3a56d4;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 992px) {
+          .service-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .service-header h2 {
+            font-size: 2.2rem;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          .service-header h2 {
+            font-size: 2rem;
+          }
+
+          .service-header p {
+            font-size: 1rem;
+          }
+        }
+
+        @media screen and (max-width: 576px) {
+          .service-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .service-header h2 {
+            font-size: 1.8rem;
+          }
+
+          .service-card {
+            padding: 1.25rem;
+          }
+        }
+      </style>
+
+      <div class="service-header">
+        <h2>Many Services. One Solution.</h2>
+        <p>
+          ServiceHive empowers your business with a full spectrum of digital,
+          cloud, and automation solutions-all in one place.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <!-- AI & Strategy -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40">
+              <path
+                fill="currentColor"
+                d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15M12,6.23L16.9,9.06L12,11.89L7.1,9.06L12,6.23M17,14.89L13,17.2V13.62L17,11.31V14.89M11,17.2L7,14.89V11.31L11,13.62V17.2Z"
+              />
+            </svg>
+          </div>
+          <h3>AI & Strategy</h3>
+          <p>Strategic AI solutions to transform your business</p>
+          <a
+            href="https://staging.praxisforge.com/strategy-ai-consulting/"
+            class="know-more-btn"
+            >Know More</a
+          >
+        </div>
+
+        <!-- Website Development -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40">
+              <path
+                fill="currentColor"
+                d="M12,18.08C5.37,18.08 0,15.36 0,12C0,8.64 5.37,5.92 12,5.92C18.63,5.92 24,8.64 24,12C24,15.36 18.63,18.08 12,18.08M6.81,10.13C7.35,10.13 7.72,10.23 7.9,10.44C8.08,10.64 8.12,11 8.03,11.47C7.93,11.97 7.74,12.31 7.45,12.5C7.17,12.69 6.74,12.79 6.16,12.79H5.29L5.82,10.13H6.81M3.31,15.68H4.75L5.09,13.93H6.32C6.86,13.93 7.3,13.87 7.65,13.76C8,13.64 8.32,13.45 8.61,13.18C8.85,12.96 9.04,12.72 9.19,12.45C9.34,12.19 9.45,11.89 9.5,11.57C9.66,10.79 9.55,10.18 9.17,9.75C8.78,9.31 8.18,9.1 7.35,9.1H4.59L3.31,15.68M10.56,7.35L9.28,13.93H10.7L11.44,10.16H12.58C12.94,10.16 13.18,10.22 13.29,10.34C13.4,10.46 13.42,10.68 13.36,11L12.79,13.93H14.24L14.83,10.86C14.96,10.24 14.86,9.79 14.56,9.5C14.26,9.23 13.71,9.1 12.91,9.1H11.64L12,7.35H10.56M18,10.13C18.55,10.13 18.91,10.23 19.09,10.44C19.27,10.64 19.31,11 19.22,11.47C19.12,11.97 18.93,12.31 18.65,12.5C18.36,12.69 17.93,12.79 17.35,12.79H16.5L17,10.13H18M14.5,15.68H15.94L16.28,13.93H17.5C18.05,13.93 18.5,13.87 18.85,13.76C19.2,13.64 19.5,13.45 19.8,13.18C20.04,12.96 20.24,12.72 20.38,12.45C20.53,12.19 20.64,11.89 20.7,11.57C20.85,10.79 20.74,10.18 20.36,9.75C19.98,9.31 19.37,9.1 18.54,9.1H15.79L14.5,15.68Z"
+              />
+            </svg>
+          </div>
+          <h3>Website Development</h3>
+          <p>Custom websites that drive results</p>
+          <a
+            href="https://staging.praxisforge.com/web-development/"
+            class="know-more-btn"
+            >Know More</a
+          >
+        </div>
+
+        <!-- App Development -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40">
+              <path
+                fill="currentColor"
+                d="M17.25,18H6.75V4H17.25M14,21H10V20H14M16,1H8A3,3 0 0,0 5,4V20A3,3 0 0,0 8,23H16A3,3 0 0,0 19,20V4A3,3 0 0,0 16,1Z"
+              />
+            </svg>
+          </div>
+          <h3>App Development</h3>
+          <p>Mobile solutions for modern businesses</p>
+          <a
+            href="https://staging.praxisforge.com/mobile-app-development/"
+            class="know-more-btn"
+            >Know More</a
+          >
+        </div>
+
+        <!-- Cloud & DevOps -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40">
+              <path
+                fill="currentColor"
+                d="M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"
+              />
+            </svg>
+          </div>
+          <h3>Cloud & DevOps</h3>
+          <p>Scalable infrastructure for growth</p>
+          <a
+            href="https://staging.praxisforge.com/cloud-and-devops/"
+            class="know-more-btn"
+            >Know More</a
+          >
+        </div>
+
+        <!-- Digital Marketing -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40">
+              <path
+                fill="currentColor"
+                d="M12,8H4A2,2 0 0,0 2,10V14A2,2 0 0,0 4,16H5V20A1,1 0 0,0 6,21H8A1,1 0 0,0 9,20V16H12L17,20V4L12,8M21.5,12C21.5,13.71 20.54,15.26 19,16V8C20.53,8.75 21.5,10.3 21.5,12Z"
+              />
+            </svg>
+          </div>
+          <h3>Digital Marketing</h3>
+          <p>Strategies that amplify your brand</p>
+          <a
+            href="https://staging.praxisforge.com/digital-marketing/"
+            class="know-more-btn"
+            >Know More</a
+          >
+        </div>
+
+        <!-- UI/UX Design -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40">
+              <path
+                fill="currentColor"
+                d="M20.71,4.63L19.37,3.29C19,2.9 18.35,2.9 17.96,3.29L9,12.25L11.75,15L20.71,6.04C21.1,5.65 21.1,5 20.71,4.63M7,14A3,3 0 0,0 4,17C4,18.31 2.84,19 2,19C2.92,20.22 4.5,21 6,21A4,4 0 0,0 10,17A3,3 0 0,0 7,14Z"
+              />
+            </svg>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>User-centered design that delights</p>
+          <a
+            href="https://staging.praxisforge.com/ui-ux-research-design/"
+            class="know-more-btn"
+            >Know More</a
+          >
+        </div>
+
+        <!-- CRM -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40">
+              <path
+                fill="currentColor"
+                d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+              />
+            </svg>
+          </div>
+          <h3>CRM</h3>
+          <p>Customer relationship management solutions</p>
+          <a href="https://staging.praxisforge.com/crm/" class="know-more-btn"
+            >Know More</a
+          >
+        </div>
+
+        <!-- IMS -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40">
+              <path
+                fill="currentColor"
+                d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z M11,7H13V9H11V7M11,11H13V17H11V11Z"
+              />
+            </svg>
+          </div>
+          <h3>IMS</h3>
+          <p>inventory management systems</p>
+          <a href="https://staging.praxisforge.com/ims/" class="know-more-btn"
+            >Know More</a
+          >
+        </div>
+
+        <!-- LMS -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40">
+              <path
+                fill="currentColor"
+                d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"
+              />
+            </svg>
+          </div>
+          <h3>LMS</h3>
+          <p>Learning management systems for growth</p>
+          <a href="https://staging.praxisforge.com/lms/" class="know-more-btn"
+            >Know More</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
