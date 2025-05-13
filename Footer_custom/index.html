@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  </head>
+  <body>
+    <style>
+      .servicehive-footer {
+        background-color: #000;
+        color: #fff;
+        padding: 40px 20px;
+        text-align: center;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .footer-container {
+        max-width: 960px;
+        margin: auto;
+      }
+
+      /* Flex layout for logo and description */
+      .footer-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+        text-align: left;
+      }
+
+      .footer-logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+
+      .footer-description {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #ccc;
+        margin-bottom: 0;
+        max-width: 600px;
+      }
+
+      .footer-socials a {
+        color: #fff;
+        margin: 0 10px;
+        font-size: 20px;
+        transition: color 0.3s ease;
+      }
+
+      .footer-socials a:hover {
+        color: #999;
+      }
+
+      /* Responsive */
+      @media (max-width: 800px) {
+        .footer-row {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 16px;
+        }
+        .footer-logo {
+          width: 120px;
+        }
+        .footer-description {
+          font-size: 14px;
+          max-width: 100%;
+        }
+        .footer-socials a {
+          font-size: 18px;
+          margin: 0 8px;
+        }
+      }
+    </style>
+    <footer class="servicehive-footer">
+      <div class="footer-container">
+        <div class="footer-row">
+          <img
+            src="https://staging.praxisforge.com/wp-content/uploads/2024/09/WhatsApp_Image_2024-09-25_at_01.42.25_faaf9d83-removebg-preview.png"
+            alt="ServiceHive Logo"
+            class="footer-logo"
+          />
+          <p class="footer-description">
+            At <strong>ServiceHive</strong>, a
+            <em>Ryuzentech Private Limited</em> venture, we’re more than a service
+            provider — we’re a passionate team of innovators driving impactful
+            solutions. With a culture built on growth, collaboration, and
+            challenge, we empower professionals to thrive while delivering
+            excellence across every project.
+          </p>
+        </div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://x.com" target="_blank" aria-label="X">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
