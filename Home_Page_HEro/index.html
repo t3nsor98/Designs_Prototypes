@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Add this in your <head> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="service-grid-container">
+      <style>
+        /* Service Grid Styles */
+        .service-grid-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          background-color: white;
+          padding: 2rem 1rem;
+          font-family: poppins, sans-serif;
+        }
+
+        .service-header {
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .service-header h2 {
+          font-size: 2.5rem;
+          color: #004cad;
+          margin-bottom: 1rem;
+          font-weight: 600;
+        }
+
+        .service-header p {
+          font-size: 1.1rem;
+          color: #666;
+          max-width: 700px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        /* Grid layout */
+        .services-layout {
+          display: grid;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        /* Different row layouts */
+        .row-featured {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        .row-services {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+        }
+
+        .row-products {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .service-card {
+          background: #fff;
+          border-radius: 10px;
+          padding: 1.5rem;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-items: center;
+          height: 100%;
+        }
+
+        .service-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+          margin-bottom: 1rem;
+          color: #004cad;
+          font-size: 2.5rem;
+        }
+
+        .service-card h3 {
+          font-size: 1.25rem;
+          margin-bottom: 0.75rem;
+          color: #333;
+          font-weight: 600;
+        }
+
+        .service-card p {
+          font-size: 0.95rem;
+          color: #666;
+          margin-bottom: 1.25rem;
+          line-height: 1.5;
+          flex-grow: 1;
+          text-align: center;
+        }
+
+        /* Featured card styles */
+        .featured-card {
+          padding: 2rem;
+        }
+
+        .featured-card .service-icon {
+          font-size: 3.5rem;
+        }
+
+        .featured-card h3 {
+          font-size: 1.75rem;
+        }
+
+        .featured-card p {
+          font-size: 1.1rem;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .know-more-btn {
+          display: inline-block;
+          padding: 0.5rem 1.25rem;
+          background-color: #004cad;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          font-weight: 500;
+          font-size: 0.9rem;
+          transition: background-color 0.3s ease;
+          text-align: center;
+        }
+
+        .know-more-btn:hover {
+          background-color: #003a87;
+          color: #ffffff;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 992px) {
+          .row-services {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          .service-header h2 {
+            font-size: 2.2rem;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          .row-services {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .row-products {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .service-header h2 {
+            font-size: 2rem;
+          }
+          .service-header p {
+            font-size: 1rem;
+          }
+        }
+
+        @media screen and (max-width: 576px) {
+          .row-services,
+          .row-products {
+            grid-template-columns: 1fr;
+          }
+          .service-header h2 {
+            font-size: 1.8rem;
+          }
+          .service-card {
+            padding: 1.25rem;
+          }
+        }
+      </style>
+
+      <div class="service-header">
+        <h2>Many Services. One Solution.</h2>
+        <p>
+          ServiceHive empowers your business with a full spectrum of digital,
+          cloud, and automation solutions-all in one place.
+        </p>
+      </div>
+
+      <div class="services-layout">
+        <!-- Row 1: AI & Strategy (Full Width) -->
+        <div class="row-featured">
+          <div class="service-card featured-card">
+            <div class="service-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>AI & Strategy</h3>
+            <p>
+              Strategic AI solutions to transform your business through
+              intelligent automation, data analysis, and innovative
+              decision-making frameworks. Our AI expertise helps you stay ahead
+              of the competition.
+            </p>
+            <a
+              href="https://staging.praxisforge.com/strategy-ai-consulting/"
+              class="know-more-btn"
+              >Know More</a
+            >
+          </div>
+        </div>
+
+        <!-- Row 2: 5 Services -->
+        <div class="row-services">
+          <!-- Website Development -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Website Development</h3>
+            <p>Custom websites that drive results</p>
+            <a
+              href="https://staging.praxisforge.com/web-development/"
+              class="know-more-btn"
+              >Know More</a
+            >
+          </div>
+
+          <!-- App Development -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>App Development</h3>
+            <p>Mobile solutions for modern businesses</p>
+            <a
+              href="https://staging.praxisforge.com/mobile-app-development/"
+              class="know-more-btn"
+              >Know More</a
+            >
+          </div>
+
+          <!-- Cloud & DevOps -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3>Cloud & DevOps</h3>
+            <p>Scalable infrastructure for growth</p>
+            <a
+              href="https://staging.praxisforge.com/cloud-and-devops/"
+              class="know-more-btn"
+              >Know More</a
+            >
+          </div>
+
+          <!-- Digital Marketing -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <h3>Digital Marketing</h3>
+            <p>Strategies that amplify your brand</p>
+            <a
+              href="https://staging.praxisforge.com/digital-marketing/"
+              class="know-more-btn"
+              >Know More</a
+            >
+          </div>
+
+          <!-- UI/UX Design -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>User-centered design that delights</p>
+            <a
+              href="https://staging.praxisforge.com/ui-ux-research-design/"
+              class="know-more-btn"
+              >Know More</a
+            >
+          </div>
+        </div>
+
+        <!-- Row 3: 3 Products -->
+        <div class="row-products">
+          <!-- CRM -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>CRM</h3>
+            <p>Customer relationship management solutions</p>
+            <a href="https://staging.praxisforge.com/crm/" class="know-more-btn"
+              >Know More</a
+            >
+          </div>
+
+          <!-- IMS -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-boxes"></i>
+            </div>
+            <h3>IMS</h3>
+            <p>Inventory management systems</p>
+            <a href="https://staging.praxisforge.com/ims/" class="know-more-btn"
+              >Know More</a
+            >
+          </div>
+
+          <!-- LMS -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>LMS</h3>
+            <p>Learning management systems for growth</p>
+            <a href="https://staging.praxisforge.com/lms/" class="know-more-btn"
+              >Know More</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

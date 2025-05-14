@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .hero-section {
+        position: relative;
+        width: 100%;
+        height: 85vh;
+        overflow: hidden;
+        border-radius: 16px;
+        margin: 20px auto;
+        max-width: 1200px;
+      }
+
+      .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 8%;
+        background: linear-gradient(
+          90deg,
+          rgba(35, 47, 73, 0.8) 0%,
+          rgba(35, 47, 73, 0.6) 50%,
+          rgba(35, 47, 73, 0.3) 100%
+        );
+      }
+
+      .hero-title {
+        color: white;
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        max-width: 600px;
+        margin-bottom: 20px;
+        font-family: "Arial", sans-serif;
+      }
+
+      .hero-description {
+        color: white;
+        font-size: 1.2rem;
+        max-width: 500px;
+        margin-bottom: 30px;
+        font-family: "Arial", sans-serif;
+      }
+
+      .hero-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #1e88e5;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        font-family: "Arial", sans-serif;
+        transition: background-color 0.3s;
+        width: fit-content;
+      }
+
+      .hero-button:hover {
+        background-color: #1565c0;
+      }
+
+      .hero-button-icon {
+        margin-left: 8px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-description {
+          font-size: 1rem;
+        }
+      }
+    </style>
+
+    <div class="hero-section">
+      <img
+        class="hero-image"
+        src="https://images.pexels.com/photos/17483874/pexels-photo-17483874/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-by-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-pr.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="Deepmind AI"
+      />
+      <div class="hero-content">
+        <h1 class="hero-title">Where AI tech meets consulting</h1>
+        <p class="hero-description">
+          ServiceHive offers the highest quality consulting services in the area
+          of technology and business.
+        </p>
+        <a href="#" class="hero-button">
+          learn more
+          <span class="hero-button-icon">→</span>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Add this in your <head> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <style>
+      .ai-section,
+      .ai-process,
+      .ai-cta {
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        position: relative;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .ai-section {
+        background: #f8fafc;
+        padding: 60px 0 40px 0;
+      }
+      .ai-section .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .ai-section h2 {
+        color: #004cad;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .ai-section .desc {
+        color: #333333;
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+      }
+
+      .ai-services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+      .ai-service-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0, 76, 173, 0.08);
+        padding: 30px 20px 25px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 220px;
+        text-align: center;
+        transition: box-shadow 0.2s, transform 0.2s, opacity 0.6s,
+          transform 0.6s;
+        opacity: 0;
+        transform: translateY(40px);
+        border-bottom: 3px solid transparent;
+      }
+      .ai-service-card:hover {
+        box-shadow: 0 5px 20px rgba(0, 76, 173, 0.15);
+        transform: translateY(-5px);
+        border-bottom: 3px solid #004cad;
+      }
+      .ai-service-card:active {
+        box-shadow: 0 2px 10px rgba(0, 76, 173, 0.1);
+        transform: translateY(0);
+      }
+      .ai-service-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .ai-service-icon {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        color: #004cad;
+        background-color: rgba(0, 76, 173, 0.08);
+        border-radius: 50%;
+      }
+      .ai-service-icon i {
+        font-size: 2rem;
+      }
+      .ai-service-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #004cad;
+        margin-bottom: 12px;
+      }
+      .ai-service-desc {
+        font-size: 1rem;
+        color: #555555;
+        line-height: 1.5;
+      }
+
+      .ai-process {
+        background: #fff;
+        padding: 60px 0 40px 0;
+      }
+      .ai-process h2 {
+        text-align: center;
+        color: #004cad;
+        margin-bottom: 25px;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      .ai-process .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .ai-process-steps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 30px;
+      }
+      .ai-process-step {
+        background: #f8fafc;
+        border-radius: 8px;
+        padding: 25px 20px;
+        min-width: 180px;
+        max-width: 220px;
+        text-align: center;
+        box-shadow: 0 3px 12px rgba(0, 76, 173, 0.08);
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.6s, transform 0.6s;
+        border-left: 3px solid #004cad;
+      }
+      .ai-process-step.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .ai-process-step-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #004cad;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+      }
+      .ai-process-step-title {
+        font-weight: 600;
+        color: #004cad;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+      .ai-process-step-desc {
+        font-size: 1rem;
+        color: #555555;
+        line-height: 1.5;
+      }
+
+      .ai-cta {
+        background: linear-gradient(100deg, #004cad 60%, #002d6a 100%);
+        color: #fff;
+        text-align: center;
+        padding: 60px 0 50px 0;
+      }
+      .ai-cta h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .ai-cta p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+      }
+      .ai-cta a {
+        display: inline-block;
+        background: #ffffff;
+        color: #004cad;
+        font-weight: 600;
+        padding: 14px 40px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+        transition: background 0.2s, color 0.2s;
+        position: relative;
+        overflow: hidden;
+      }
+      .ai-cta a:hover {
+        background: #f0f5ff;
+      }
+      .ai-cta a:active {
+        background: #e0ebff;
+        color: #003b8a;
+      }
+
+      /* --- Ripple effect CSS moved here --- */
+      .ripple-btn {
+        position: relative;
+        overflow: hidden;
+      }
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(0, 76, 173, 0.15);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+        z-index: 2;
+      }
+      @keyframes ripple {
+        to {
+          transform: scale(2.5);
+          opacity: 0;
+        }
+      }
+      /* --- End Ripple effect CSS --- */
+
+      @media (max-width: 700px) {
+        .ai-hero h1 {
+          font-size: 1.5rem;
+        }
+        .ai-hero img {
+          width: 98vw;
+        }
+        .ai-section h2,
+        .ai-cta h2 {
+          font-size: 1.5rem;
+        }
+        .ai-section .desc,
+        .ai-cta p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <section class="ai-section fade-in">
+      <div class="container">
+        <h2>What We Offer</h2>
+        <div class="desc">
+          ServiceHive delivers tailored AI solutions for every business
+          need—whether you're looking to automate routine tasks, gain actionable
+          insights, or enhance customer experiences.
+        </div>
+        <div class="ai-services-grid">
+          <div class="ai-service-card">
+            <div class="ai-service-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="ai-service-title">AI Strategy Consulting</div>
+            <div class="ai-service-desc">
+              Expert guidance to plan, implement, and scale AI for real business
+              impact.
+            </div>
+          </div>
+          <div class="ai-service-card">
+            <div class="ai-service-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <div class="ai-service-title">Process Automation</div>
+            <div class="ai-service-desc">
+              Automate repetitive tasks and boost efficiency with intelligent
+              workflows.
+            </div>
+          </div>
+          <div class="ai-service-card">
+            <div class="ai-service-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="ai-service-title">Predictive Analytics</div>
+            <div class="ai-service-desc">
+              Forecast trends and make data-driven decisions with advanced
+              analytics.
+            </div>
+          </div>
+          <div class="ai-service-card">
+            <div class="ai-service-icon">
+              <i class="fas fa-comment-dots"></i>
+            </div>
+            <div class="ai-service-title">AI Chatbots</div>
+            <div class="ai-service-desc">
+              Enhance customer support and engagement with smart, automated
+              chatbots.
+            </div>
+          </div>
+          <div class="ai-service-card">
+            <div class="ai-service-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <div class="ai-service-title">Computer Vision</div>
+            <div class="ai-service-desc">
+              Leverage image and video analysis for quality control and
+              security.
+            </div>
+          </div>
+          <div class="ai-service-card">
+            <div class="ai-service-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="ai-service-title">Fraud Detection</div>
+            <div class="ai-service-desc">
+              Protect your business with AI-powered risk and anomaly detection.
+            </div>
+          </div>
+          <div class="ai-service-card">
+            <div class="ai-service-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="ai-service-title">Document Automation</div>
+            <div class="ai-service-desc">
+              Extract, process, and manage documents automatically using AI.
+            </div>
+          </div>
+          <div class="ai-service-card">
+            <div class="ai-service-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="ai-service-title">WhatsApp & Messaging AI</div>
+            <div class="ai-service-desc">
+              Integrate AI with WhatsApp and messaging apps for seamless
+              communication.
+            </div>
+          </div>
+          <div class="ai-service-card">
+            <div class="ai-service-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <div class="ai-service-title">Business Intelligence</div>
+            <div class="ai-service-desc">
+              Transform raw data into actionable insights for smarter growth.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-process fade-in">
+      <div class="container">
+        <h2>How We Deliver AI Success</h2>
+        <div class="ai-process-steps">
+          <div class="ai-process-step">
+            <div class="ai-process-step-number">1</div>
+            <div class="ai-process-step-title">Discovery</div>
+            <div class="ai-process-step-desc">
+              Understanding your business goals and challenges.
+            </div>
+          </div>
+          <div class="ai-process-step">
+            <div class="ai-process-step-number">2</div>
+            <div class="ai-process-step-title">Design</div>
+            <div class="ai-process-step-desc">
+              Crafting a custom AI roadmap and solution architecture.
+            </div>
+          </div>
+          <div class="ai-process-step">
+            <div class="ai-process-step-number">3</div>
+            <div class="ai-process-step-title">Development</div>
+            <div class="ai-process-step-desc">
+              Building, training, and integrating your AI solution.
+            </div>
+          </div>
+          <div class="ai-process-step">
+            <div class="ai-process-step-number">4</div>
+            <div class="ai-process-step-title">Deployment</div>
+            <div class="ai-process-step-desc">
+              Seamless rollout and onboarding for your team.
+            </div>
+          </div>
+          <div class="ai-process-step">
+            <div class="ai-process-step-number">5</div>
+            <div class="ai-process-step-title">Optimization</div>
+            <div class="ai-process-step-desc">
+              Continuous monitoring and improvement for lasting results.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-cta fade-in">
+      <h2>Ready to Transform Your Business with AI?</h2>
+      <p>
+        Let ServiceHive design and deliver the AI solutions that will set you
+        apart.<br />
+        <strong>Contact us today for a free consultation!</strong>
+      </p>
+      <a href="mailto:contact@servicehive.tech" class="ripple-btn">
+        <i class="fas fa-rocket"></i> Get Started
+      </a>
+    </section>
+
+    <script>
+      /* Fade-in on scroll for sections and cards */
+      function revealOnScroll() {
+        document
+          .querySelectorAll(".fade-in, .ai-service-card, .ai-process-step")
+          .forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 60) {
+              el.classList.add("visible");
+            }
+          });
+      }
+      window.addEventListener("scroll", revealOnScroll);
+      window.addEventListener("DOMContentLoaded", revealOnScroll);
+
+      /* Ripple effect for CTA button */
+      document.querySelectorAll(".ripple-btn").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          const circle = document.createElement("span");
+          circle.className = "ripple";
+          this.appendChild(circle);
+          const d = Math.max(this.clientWidth, this.clientHeight);
+          circle.style.width = circle.style.height = d + "px";
+          circle.style.left =
+            e.clientX - this.getBoundingClientRect().left - d / 2 + "px";
+          circle.style.top =
+            e.clientY - this.getBoundingClientRect().top - d / 2 + "px";
+          setTimeout(() => circle.remove(), 600);
+        });
+      });
+    </script>
+  </body>
+</html>
