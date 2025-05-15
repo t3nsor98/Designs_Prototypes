@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .blog-hero {
+        background: url("https://source.unsplash.com/1920x800/?technology,future")
+          center/cover no-repeat;
+        padding: 100px 20px;
+        color: white;
+        text-align: center;
+      }
+      .blog-hero h1 {
+        font-size: 3rem;
+      }
+      .blog-hero p {
+        font-size: 1.2rem;
+        margin: 20px 0;
+      }
+      .cta-btn {
+        background: #f1a208;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .blog-grid {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding: 60px 20px;
+      }
+      .blog-post {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: 0.3s ease-in-out;
+      }
+      .blog-post:hover {
+        transform: translateY(-5px);
+      }
+      .blog-post img {
+        width: 100%;
+        height: auto;
+      }
+      .blog-post h3 {
+        padding: 20px 20px 10px;
+        font-size: 1.3rem;
+      }
+      .blog-post p {
+        padding: 0 20px 20px;
+        color: #555;
+      }
+      .read-more {
+        display: inline-block;
+        margin: 0 20px 20px;
+        color: #005377;
+        font-weight: 600;
+      }
+    </style>
+    <section class="blog-hero">
+      <div class="content">
+        <h1>Welcome to Our Blog</h1>
+        <p>
+          Insights, strategies, and stories from the world of tech, AI, and
+          digital transformation.
+        </p>
+        <a href="#posts" class="cta-btn">Explore Articles</a>
+      </div>
+    </section>
+    <div class="categories-filter">
+      <button class="active">All</button>
+      <button>AI</button>
+      <button>Tech</button>
+      <button>Business</button>
+      <button>Marketing</button>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-post">
+        <img
+          src="https://images.pexels.com/photos/8438922/pexels-photo-8438922.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="Post 1"
+        />
+        <h3>How AI Is Reshaping Modern Businesses</h3>
+        <p>
+          Discover how GPT and predictive analytics are transforming operations
+          across industries.
+        </p>
+        <a href="#" class="read-more">Read More</a>
+      </article>
+
+      <article class="blog-post">
+        <img
+          src="https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="Post 2"
+        />
+        <h3>Top 5 Tools for Front-End Developers in 2025</h3>
+        <p>
+          A breakdown of the best new tools that boost productivity and clean
+          code delivery.
+        </p>
+        <a href="#" class="read-more">Read More</a>
+      </article>
+
+      <article class="blog-post">
+        <img
+          src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="Post 3"
+        />
+        <h3>Smart Marketing with AI-Powered Automation</h3>
+        <p>
+          Target the right audience with the right message—automatically and at
+          scale.
+        </p>
+        <a href="#" class="read-more">Read More</a>
+      </article>
+    </div>
+  </body>
+</html>

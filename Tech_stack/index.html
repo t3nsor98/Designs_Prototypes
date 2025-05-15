@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background: #f9f9f9;
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      section {
+        padding: 5rem 1rem;
+      }
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        color: #0049ad;
+      }
+      p {
+        font-size: 1.3rem;
+        color: #0049ad;
+        margin-bottom: 3.5rem;
+      }
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        text-align: center;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .tech-card {
+        background: #fff;
+        border-radius: 1.2rem;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+        padding: 3rem 2rem;
+        transition: transform 0.2s;
+        min-height: 370px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .tech-card:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      }
+      .tech-card h3 {
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+      }
+      .tech-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: #444;
+        font-size: 1.25rem;
+      }
+      .tech-card li {
+        margin: 0.9rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        font-size: 1.18rem;
+      }
+      .tech-card i {
+        font-size: 1.5em;
+      }
+      /* Hide the placeholder card */
+      .tech-card.placeholder {
+        background: transparent;
+        box-shadow: none;
+        pointer-events: none;
+        min-height: 0;
+        padding: 0;
+      }
+      @media (max-width: 1000px) {
+        .tech-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 700px) {
+        h1 {
+          font-size: 2rem;
+        }
+        .tech-card {
+          padding: 1.5rem 0.7rem;
+          min-height: 220px;
+        }
+        .tech-card h3 {
+          font-size: 1.1rem;
+        }
+        .tech-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Tech Stack Hero Section -->
+    <section>
+      <div style="max-width: 1200px; margin: auto; text-align: center">
+        <h1>Our Tech Stack</h1>
+        <p>
+          Tools and technologies we use to build robust, scalable, and modern
+          solutions.
+        </p>
+
+        <!-- Grid Layout -->
+        <div class="tech-grid">
+          <!-- Frontend -->
+          <div class="tech-card">
+            <h3>
+              <i class="fas fa-laptop-code" style="color: #3b82f6"></i> Frontend
+            </h3>
+            <ul>
+              <li><i class="fab fa-react"></i> React</li>
+              <li><i class="fab fa-vuejs"></i> Vue.js</li>
+              <li><i class="fab fa-angular"></i> Angular</li>
+              <li><i class="fab fa-html5"></i> HTML5</li>
+              <li><i class="fab fa-css3-alt"></i> CSS3</li>
+              <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+              <li><i class="fas fa-pencil-ruler"></i> Figma</li>
+              <li><i class="fab fa-wordpress"></i> WordPress</li>
+            </ul>
+          </div>
+
+          <!-- Backend -->
+          <div class="tech-card">
+            <h3>
+              <i class="fas fa-server" style="color: #10b981"></i> Backend
+            </h3>
+            <ul>
+              <li><i class="fab fa-java"></i> Java</li>
+              <li><i class="fas fa-code"></i> C++ / C#</li>
+              <li><i class="fab fa-node-js"></i> Node.js</li>
+              <li><i class="fa-brands fa-python"></i> Python / Django</li>
+              <li><i class="fab fa-php"></i> PHP</li>
+              <li><i class="fas fa-network-wired"></i> .NET</li>
+            </ul>
+          </div>
+
+          <!-- Database & Cloud -->
+          <div class="tech-card">
+            <h3>
+              <i class="fas fa-database" style="color: #f59e0b"></i> DB & Cloud
+            </h3>
+            <ul>
+              <li><i class="fas fa-database"></i> MySQL / MongoDB</li>
+              <li><i class="fab fa-git-alt"></i> Git</li>
+              <li><i class="fab fa-aws"></i> AWS</li>
+              <li><i class="fab fa-microsoft"></i> Azure</li>
+              <li><i class="fab fa-google"></i> Google Cloud</li>
+              <li><i class="fas fa-layer-group"></i> Collibra</li>
+            </ul>
+          </div>
+
+          <!-- AI & Data -->
+          <div class="tech-card">
+            <h3>
+              <i class="fas fa-brain" style="color: #a855f7"></i> AI & Data
+              Science
+            </h3>
+            <ul>
+              <li><i class="fas fa-robot"></i> TensorFlow / PyTorch</li>
+              <li><i class="fas fa-magic"></i> GitHub Copilot</li>
+              <li><i class="fas fa-chart-bar"></i> Tableau / Power BI</li>
+              <li><i class="fas fa-square-root-alt"></i> R Language</li>
+              <li><i class="fas fa-chart-pie"></i> Data Visualization</li>
+            </ul>
+          </div>
+
+          <!-- Digital Marketing -->
+          <div class="tech-card">
+            <h3>
+              <i class="fas fa-bullhorn" style="color: #ef4444"></i> Digital
+              Marketing
+            </h3>
+            <ul>
+              <li><i class="fab fa-google"></i> Google Ads / Analytics</li>
+              <li><i class="fab fa-facebook"></i> Facebook Ads</li>
+              <li><i class="fas fa-envelope-open-text"></i> Mailchimp</li>
+              <li><i class="fas fa-crosshairs"></i> Targeted Ads</li>
+              <li><i class="fab fa-linkedin"></i> LinkedIn Ads</li>
+            </ul>
+          </div>
+
+          <!-- DevOps & Automation -->
+          <div class="tech-card">
+            <h3>
+              <i class="fas fa-cogs" style="color: #6366f1"></i> DevOps &
+              Automation
+            </h3>
+            <ul>
+              <li><i class="fab fa-docker"></i> Docker</li>
+              <li><i class="fab fa-jenkins"></i> Jenkins</li>
+              <li><i class="fab fa-gitlab"></i> GitLab CI/CD</li>
+              <li><i class="fas fa-cloud-upload-alt"></i> CI/CD Pipelines</li>
+              <li><i class="fas fa-sync-alt"></i> Automation Scripts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+```
