@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+  <style>
+    .privacy-policy-container {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .privacy-policy-header {
+      text-align: center;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #0056b3;s
+      padding-bottom: 20px;
+    }
+    
+    .privacy-policy-header h1 {
+      font-size: 2.5rem;
+      color: #0056b3;
+      margin-bottom: 10px;
+    }
+    
+    .effective-date {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    .privacy-policy-toc {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .privacy-policy-toc h2 {
+      margin-top: 0;
+      color: #0056b3;
+    }
+    
+    .toc-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .toc-list li {
+      margin-bottom: 10px;
+    }
+    
+    .toc-list a {
+      color: #0056b3;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .toc-list a:hover {
+      color: #003d7a;
+      text-decoration: underline;
+    }
+    
+    .privacy-section {
+      margin-bottom: 40px;
+    }
+    
+    .privacy-section h2 {
+      color: #0056b3;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+    
+    .privacy-section h3 {
+      color: #0056b3;
+      margin-top: 25px;
+    }
+    
+    .privacy-section ul {
+      padding-left: 20px;
+    }
+    
+    .privacy-section ul li {
+      margin-bottom: 8px;
+    }
+    
+    .privacy-footer {
+      font-style: italic;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    
+    .contact-info {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    /* Collapsible sections for mobile */
+    .collapsible-section {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .collapsible-section::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: #0056b3;
+    }
+    
+    .active.collapsible-section::after {
+      content: '-';
+    }
+    
+    .section-content {
+      display: block;
+      overflow: hidden;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .privacy-policy-header h1 {
+        font-size: 2rem;
+      }
+      
+      .section-content {
+        display: none;
+      }
+      
+      .active + .section-content {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="privacy-policy-container">
+    <div class="privacy-policy-header">
+      <h1>RYUZENTECH PVT LTD Privacy Policy</h1>
+      <p class="effective-date"><strong>Effective Date:</strong> 13th May 2025</p>
+    </div>
+    
+    <div class="privacy-policy-intro">
+      <p>This Privacy Policy governs your use of all websites, mobile applications, and services (collectively, the "Services") provided by RYUZENTECH PVT LTD. It applies to all RYUZENTECH PVT LTD websites that link to this policy, including any third-party marketplaces or platforms where our CRM solutions are offered. This Privacy Policy does not apply to any sites, products, or services for which a separate privacy notice is provided.</p>
+      
+      <p>We at RYUZENTECH PVT LTD are committed to protecting your privacy and ensuring the security of your personal data. Our new CRM business, although less than one year in age, operates with the same rigorous dedication to transparency and user privacy as long-established technology companies. RYUZENTECH PVT LTD has never sold your information for advertising nor generated revenue through data-driven ads—and it never will. This document sets forth the information we collect, the purposes for which we collect it, how we process and share it, your rights regarding your data, and the security measures we take.</p>
+    </div>
+    
+    <div class="privacy-policy-toc">
+      <h2>Table of Contents</h2>
+      <ol class="toc-list">
+        <li><a href="#scope">Scope and Overview</a></li>
+        <li><a href="#commitment">Our Privacy Commitment</a></li>
+        <li><a href="#part1">Information We Collect and Control (Part I)</a></li>
+        <li><a href="#part2">Information Processed on Your Behalf (Part II)</a></li>
+        <li><a href="#part3">General Policies (Part III)</a></li>
+        <li><a href="#contact">Contact Information and Inquiries</a></li>
+      </ol>
+    </div>
+    
+    <div id="scope" class="privacy-section">
+      <h2 class="collapsible-section">Scope and Overview</h2>
+      <div class="section-content">
+        <p>This Privacy Policy is intended to fully inform you about how RYUZENTECH PVT LTD:</p>
+        <ul>
+          <li><strong>Collects Information:</strong> The types and sources of personal data and service data we collect.</li>
+          <li><strong>Uses Information:</strong> The specific purposes for which your information is used to provide and improve our CRM services.</li>
+          <li><strong>Shares Information:</strong> The circumstances under which your data may be shared with our employees, trusted third-party vendors, integration partners, and reselling partners.</li>
+          <li><strong>Protects Information:</strong> The administrative, technical, and physical safeguards we deploy to maintain the confidentiality, integrity, and availability of your data.</li>
+          <li><strong>Respects Your Rights:</strong> Your rights under applicable data protection regulations (such as the GDPR) and how you may exercise those rights.</li>
+        </ul>
+        <p>This document is as comprehensive as the industry-leading standards set by long-standing providers—adapted to reflect our new journey in the CRM space.</p>
+      </div>
+    </div>
+    
+    <div id="commitment" class="privacy-section">
+      <h2 class="collapsible-section">Our Privacy Commitment</h2>
+      <div class="section-content">
+        <p>At RYUZENTECH PVT LTD, protecting your privacy is not just a regulatory obligation—it is a core business value. We are committed to:</p>
+        <ul>
+          <li><strong>Transparency:</strong> Clearly explaining what data we collect and how we process it.</li>
+          <li><strong>Data Minimization:</strong> Only collecting personal data that is necessary for our specified purposes.</li>
+          <li><strong>Security:</strong> Implementing robust security measures to prevent unauthorized access or disclosure.</li>
+          <li><strong>Accountability:</strong> Ensuring that all employees and partners handling your data abide by strict confidentiality and privacy guidelines.</li>
+          <li><strong>Respect & Trust:</strong> Never selling your personal information for advertising purposes nor using it to generate revenue through third-party ad placements.</li>
+        </ul>
+        <p>This Privacy Policy reflects our promise to maintain your trust as we grow and evolve our CRM services.</p>
+      </div>
+    </div>
+    
+    <div id="part1" class="privacy-section">
+      <h2 class="collapsible-section">Part I — Information We Collect and Control</h2>
+      <div class="section-content">
+        <p>RYUZENTECH PVT LTD collects only the information that is necessary to deliver and improve its CRM solutions and customer support. The information is categorized into data that you actively provide, data collected automatically from your interactions, and data obtained from trusted third parties.</p>
+        
+        <h3>Information You Provide to Us</h3>
+        <p>You directly provide information in several ways, including (but not limited to):</p>
+        <ol>
+          <li>
+            <strong>Account Signup:</strong>
+            <ul>
+              <li>Required details: Full name, email address, contact number, company name, country, and password.</li>
+              <li>Optional details: Profile photo, alternate contact details, time zone, and preferred language.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Event Registrations and Form Submissions:</strong>
+            <ul>
+              <li>Signing up for webinars, demos, CRM training sessions or industry events.</li>
+              <li>Downloading whitepapers, e-books, or other resources.</li>
+              <li>Requesting quotes, product demonstrations, or customer support.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Transactional Information:</strong>
+            <ul>
+              <li>When you purchase access to our CRM tools or subscribe to our services, we process billing information such as the cardholder's name, billing address, and the last four digits of your credit card (all processed securely via our authorized payment gateway).</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Testimonials and Feedback:</strong>
+            <ul>
+              <li>If you choose to share testimonials or feedback, your name and other identifying information may be displayed publicly (with your prior consent).</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Direct Communication:</strong>
+            <ul>
+              <li>Emails, phone calls, live chats, or support tickets initiated via our websites or apps.</li>
+              <li>Surveys and customer satisfaction questionnaires.</li>
+            </ul>
+          </li>
+        </ol>
+        
+        <h3>Information Collected Automatically</h3>
+        <p>When you interact with our websites or mobile applications, we automatically log certain data:</p>
+        <ol>
+          <li>
+            <strong>Device and Log Information:</strong>
+            <ul>
+              <li>Browser type, IP address, operating system, device details, time zone, referring URLs, date and time stamps, and pages visited.</li>
+              <li>This usage data helps us analyze trends, administer our website, and improve overall service performance.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Cookies and Other Tracking Technologies:</strong>
+            <ul>
+              <li><strong>Session Cookies:</strong> To maintain session state and provide a seamless user experience.</li>
+              <li><strong>Persistent Cookies:</strong> To remember user preferences, language settings, and security authentication tokens.</li>
+              <li><strong>Local Storage and Similar Technologies:</strong> To store content preferences or provide functionality when you return to our services.</li>
+            </ul>
+          </li>
+        </ol>
+        <p>You can disable cookies via your browser settings; however, this might impair the functionality of some features on our websites.</p>
+        
+        <h3>Information from Third Parties</h3>
+        <p>We may obtain personal data about you from external sources, such as:</p>
+        <ol>
+          <li>
+            <strong>Federated Authentication:</strong>
+            <ul>
+              <li>If you log in using third-party providers like Google, Microsoft, or LinkedIn, those providers may share your basic profile information (name, email address) with us.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Reselling and Referral Partners:</strong>
+            <ul>
+              <li>If you are introduced to RYUZENTECH PVT LTD via a partner, reseller, or referral program, we may receive your contact details and other relevant data directly from that partner.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Public and Social Media Sources:</strong>
+            <ul>
+              <li>When you interact with our brand on social media or review sites, the public information (and any content you post) may be collected for analytics or customer support purposes.</li>
+            </ul>
+          </li>
+        </ol>
+        
+        <h3>Purposes for Using Your Information</h3>
+        <p>Your information is used by RYUZENTECH PVT LTD to:</p>
+        <ul>
+          <li><strong>Provide and Maintain Our CRM Services:</strong> Create and manage your account, facilitate CRM workflows, and offer tailored features.</li>
+          <li><strong>Customer Communication:</strong> Notify you about account changes, product updates, security alerts, and promotional offers related to our CRM.</li>
+          <li><strong>Service Improvements:</strong> Analyze usage data to enhance our products, troubleshooting issues, and drive innovation.</li>
+          <li><strong>Personalization:</strong> Customize your experience by displaying relevant content, recommendations, or integrated third-party services.</li>
+          <li><strong>Security and Fraud Prevention:</strong> Monitor for potentially unauthorized or malicious use of your account and safeguard your data.</li>
+          <li><strong>Legal and Regulatory Compliance:</strong> Process data required for legal, accounting, or regulatory obligations.</li>
+        </ul>
+        
+        <h3>Legal Bases for Processing Personal Data</h3>
+        <p>Depending on your location (e.g., if you are within the European Economic Area), our processing of personal data is underpinned by one or several of the following legal grounds:</p>
+        <ul>
+          <li><strong>Contractual Necessity:</strong> Processing that is essential for the delivery of our CRM services.</li>
+          <li><strong>Consent:</strong> Where you have explicitly consented to the processing of your personal data (subject to withdrawal at any time).</li>
+          <li><strong>Legitimate Interests:</strong> Processing necessary to fulfill our legitimate business interests, provided that such interests are not overridden by your rights.</li>
+          <li><strong>Legal Obligations:</strong> Processing required to comply with applicable laws or court orders.</li>
+        </ul>
+        
+        <h3>Your Choices Regarding Your Information</h3>
+        <p>You have control over the personal information you share with RYUZENTECH PVT LTD:</p>
+        <ul>
+          <li><strong>Managing Communication:</strong> You may opt out of non-essential marketing emails by using the unsubscribe links provided in each email. Essential transactional emails will still be sent.</li>
+          <li><strong>Cookie Preferences:</strong> You may adjust your browser's settings to refuse non-essential cookies. Note that this might limit certain functionalities on our website.</li>
+          <li><strong>Data Accuracy:</strong> You can access and update your account information through your user dashboard.</li>
+          <li><strong>Withdrawal of Consent:</strong> Where processing is based on consent, you may withdraw your permission at any time, though this will not affect processing already carried out.</li>
+        </ul>
+        
+        <h3>Retention of Personal Data</h3>
+        <p>RYUZENTECH PVT LTD retains your personal information only for as long as it is needed for the purposes outlined in this Privacy Policy or as required by law. Specifically:</p>
+        <ul>
+          <li>
+            <strong>Active Accounts:</strong> Your information is kept in active databases as long as you maintain an account.
+          </li>
+          <li>
+            <strong>Inactive or Terminated Accounts:</strong> Once your account is closed, we begin a routine deletion process:
+            <ul>
+              <li>Data is removed from our active systems within six months.</li>
+              <li>Backups including your data will be securely deleted or anonymized after a further three months.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="part2" class="privacy-section">
+      <h2 class="collapsible-section">Part II — Information Processed on Your Behalf</h2>
+      <div class="section-content">
+        <p>When you use our CRM services, you may entrust RYUZENTECH PVT LTD with sensitive information about your business contacts, customers, or clients. This information is defined as "service data."</p>
+        
+        <h3>Service Data: What It Is and How We Process It</h3>
+        <ul>
+          <li><strong>Scope:</strong> Service data includes any data related to your business operations processed through our CRM services (such as customer records, relationship histories, sales leads, and interaction logs).</li>
+          <li><strong>Purpose:</strong> We process your service data strictly to perform the services you have requested, such as managing client interactions, tracking sales pipelines, or analyzing customer behavior.</li>
+          <li><strong>Method:</strong> Processing is carried out either on our secure servers or through third-party providers under strict confidentiality agreements.</li>
+        </ul>
+        
+        <h3>Ownership and Your Control of Service Data</h3>
+        <p>You retain full ownership of all service data you entrust to RYUZENTECH PVT LTD. To ensure you remain in control:</p>
+        <ul>
+          <li>You may access, modify, or move your data at any time.</li>
+          <li>You can connect your CRM data to integrated third-party applications.</li>
+          <li>You may request an export or deletion of your service data at any point.</li>
+        </ul>
+        
+        <h3>Retention and Deletion of Service Data</h3>
+        <ul>
+          <li><strong>Active Use:</strong> Your service data is stored and maintained as long as you actively use our CRM services.</li>
+          <li><strong>After Termination:</strong> Upon termination of your account, service data is purged from active systems during our next scheduled clean-up (typically within six months) and then removed from backups three months thereafter.</li>
+        </ul>
+        
+        <h3>Data Subject Rights and Requests</h3>
+        <p>If you are located in jurisdictions that grant you rights in respect of your data (e.g., under the GDPR), you have the right to:</p>
+        <ul>
+          <li><strong>Access:</strong> Request copies of the personal data we hold about you.</li>
+          <li><strong>Rectification:</strong> Correct any inaccuracies in your information.</li>
+          <li><strong>Erasure:</strong> Request deletion of your personal data under certain circumstances.</li>
+          <li><strong>Restrict Processing:</strong> Limit how we process your personal data.</li>
+          <li><strong>Portability:</strong> Obtain your data in a structured, commonly used, and machine-readable format.</li>
+          <li><strong>Object:</strong> Object to our processing of your data for legitimate interests or direct marketing.</li>
+        </ul>
+        <p>To exercise these rights, please contact us as described in the Contact Information section.</p>
+      </div>
+    </div>
+    
+    <div id="part3" class="privacy-section">
+      <h2 class="collapsible-section">Part III — General Policies</h2>
+      <div class="section-content">
+        <p>This part covers aspects that are common to both the data we collect directly (Part I) and the service data processed on your behalf (Part II), as well as additional general practices and legal disclosures.</p>
+        
+        <h3>Children's Personal Information</h3>
+        <ul>
+          <li>Our CRM services are intended for users 16 years or older.</li>
+          <li>We do not knowingly collect personal data from individuals under 16.</li>
+          <li>If it comes to our attention that data from a minor under 16 has been collected, we will take immediate steps to delete such data.</li>
+        </ul>
+        
+        <h3>Data Security Measures</h3>
+        <p>RYUZENTECH PVT LTD is committed to ensuring the security of your data. Our measures include:</p>
+        <ul>
+          <li><strong>Administrative Safeguards:</strong> Strict internal access controls, regular staff training, and detailed data handling policies.</li>
+          <li><strong>Technical Safeguards:</strong> Data encryption (both in transit and at rest), secure development practices, multi-factor authentication, and routine security audits.</li>
+          <li><strong>Physical Safeguards:</strong> Secured data centers with controlled physical access and environmental protections.</li>
+        </ul>
+        <p>In the event of a data breach, we will notify the appropriate authorities and affected users in accordance with applicable laws.</p>
+        
+        <h3>Data Protection Officer</h3>
+        <p>We have designated a Data Protection Officer (DPO) to oversee our compliance with this Privacy Policy and all applicable data protection laws.</p>
+        <ul>
+          <li>
+            <strong>Contact:</strong>
+            <ul>
+              <li><strong>Email:</strong> contact@servicehive.tech</li>
+              <li><strong>Mail:</strong> Data Protection Officer, RYUZENTECH PVT LTD, Noida, Uttar Pradesh IN</li>
+            </ul>
+          </li>
+        </ul>
+        
+        <h3>International Data Transfers</h3>
+        <p>RYUZENTECH PVT LTD may transfer and process your data internationally in order to provide our services.</p>
+        <ul>
+          <li>Such transfers occur in compliance with applicable data protection laws and are secured through legal instruments (e.g., model contractual clauses).</li>
+          <li>When your personal data is transferred outside your country or the European Economic Area (EEA), we ensure an adequate level of protection for your information.</li>
+        </ul>
+        
+        <h3>Third-Party Integrations, Links, and Social Media</h3>
+        <ul>
+          <li><strong>Third-Party Service Providers:</strong> Our partners (such as hosting, analytics, payment processing, and customer support) are contractually bound to handle your data securely and only for the purposes defined by us.</li>
+          <li><strong>Embedded Content:</strong> Our websites may contain embedded third-party content (for example, videos or social media widgets). Such content is governed by the privacy policies of those third parties.</li>
+          <li><strong>Social Media:</strong> When you engage with our social media channels, note that your personal data may be subject to third-party privacy policies.</li>
+        </ul>
+        <p>We encourage you to review the privacy practices of any third-party services that you interact with on our behalf.</p>
+        
+        <h3>Compliance and Disclosures</h3>
+        <ul>
+          <li><strong>Legal Disclosures:</strong> We may disclose your personal information when required by law, to comply with legal processes, or to protect our rights, your safety, or that of our users.</li>
+          <li><strong>Breach Notification:</strong> In the unlikely event of a data breach, we will follow established notification protocols, informing regulators and affected users as required by law.</li>
+          <li><strong>Do Not Track (DNT):</strong> Although some browsers offer DNT signals, RYUZENTECH PVT LTD currently does not modify its practices in response to these signals. Should a standard emerge, we will review our practices accordingly.</li>
+        </ul>
+        
+        <h3>Business Transfers and Mergers</h3>
+        <p>In the event that RYUZENTECH PVT LTD undergoes a merger, acquisition, or transfer of business assets, your data will be handled in accordance with this Privacy Policy. Any acquiring party will be contractually obligated to adhere to similar privacy and data protection commitments.</p>
+        
+        <h3>Automation, Artificial Intelligence, and Analytics</h3>
+        <p>To improve our CRM services and provide predictive insights:</p>
+        <ul>
+          <li>We use automated tools such as artificial intelligence, machine learning, and analytics.</li>
+          <li>These tools operate on anonymized or pseudo-anonymized data where possible.</li>
+          <li>For tailored model development (for example, to better serve your organization), we may use your organization's data in a secure and controlled manner.</li>
+        </ul>
+        
+        <h3>Do Not Track (DNT) and Cookie Preferences</h3>
+        <ul>
+          <li><strong>Cookies and Local Storage:</strong> We predominantly rely on first-party cookies to provide essential functionality and enhance your user experience.</li>
+          <li>You may modify cookie settings in your browser. However, disabling cookies might impair the performance or usability of some features.</li>
+          <li>Currently, we do not honor "Do Not Track" signals. We are monitoring developments and will make changes as necessary.</li>
+        </ul>
+        
+        <h3>Notification of Changes to This Privacy Policy</h3>
+        <p>RYUZENTECH PVT LTD reserves the right to modify this Privacy Policy at any time.</p>
+        <ul>
+          <li><strong>Major Changes:</strong> If adaptations significantly affect your rights or obligations, we will provide you with at least 30 days' advance notice via email and/or a prominent notice on our website.</li>
+          <li><strong>Minor Changes:</strong> Routine updates or clarifications will be updated on this page without separate notice.</li>
+        </ul>
+        <p>We encourage you to review this policy periodically.</p>
+      </div>
+    </div>
+    
+    <div id="contact" class="privacy-section contact-info">
+      <h2>Contact Information and Inquiries</h2>
+      <p>For any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+      <p><strong>Privacy Officer, RYUZENTECH PVT LTD</strong></p>
+      <p><strong>Address:</strong> Noida, Uttar Pradesh IN</p>
+      <p><strong>Email:</strong> contact@servicehive.tech</p>
+      <p><strong>Phone:</strong> +91 8076222572 </p>
+      <p>For data subject requests or more detailed inquiries about your personal information, kindly refer to the instructions outlined in the relevant sections above.</p>
+    </div>
+    
+    <div class="privacy-footer">
+      <p>This Privacy Policy reflects RYUZENTECH PVT LTD's comprehensive approach to privacy protection for our CRM services. By using our Services, you acknowledge that you have read, understood, and agreed to be bound by this Privacy Policy and any updates hereto.</p>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add collapsible functionality for mobile view
+      var collapsibleHeadings = document.querySelectorAll('.collapsible-section');
+      
+      collapsibleHeadings.forEach(function(heading) {
+        heading.addEventListener('click', function() {
+          this.classList.toggle('active');
+          
+          // Only collapse sections on mobile devices
+          if (window.innerWidth <= 768) {
+            var content = this.nextElementSibling;
+            if (content.style.display === 'block') {
+              content.style.display = 'none';
+            } else {
+              content.style.display = 'block';
+            }
+          }
+        });
+      });
+      
+      // Handle resize events to ensure proper display
+      window.addEventListener('resize', function() {
+        var contents = document.querySelectorAll('.section-content');
+        if (window.innerWidth > 768) {
+          contents.forEach(function(content) {
+            content.style.display = 'block';
+          });
+        } else {
+          contents.forEach(function(content) {
+            if (!content.previousElementSibling.classList.contains('active')) {
+              content.style.display = 'none';
+            }
+          });
+        }
+      });
+      
+      // Initialize display based on current window size
+      if (window.innerWidth <= 768) {
+        document.querySelectorAll('.section-content').forEach(function(content) {
+          content.style.display = 'none';
+        });
+      }
+    });
+  </script>
+
+    
+</body>
+</html>
