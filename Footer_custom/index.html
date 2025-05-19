@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
     <style>
@@ -27,6 +29,7 @@
       .footer-container {
         max-width: 960px;
         margin: auto;
+        height: 400px;
       }
 
       .footer-row {
@@ -74,8 +77,80 @@
       }
       .footer-nav a:hover {
         background: #222;
-        color: #ffd600;
+        color: #0049ae;
         opacity: 1;
+      }
+
+      /* Dropdown Styles */
+      .footer-nav li {
+        position: relative;
+        display: inline-block;
+      }
+      .footer-nav .dropdown > a:after {
+        content: " ▼";
+        font-size: 10px;
+        margin-left: 3px;
+        opacity: 0.7;
+      }
+      .footer-nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: #111;
+        min-width: 220px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+        border-radius: 6px;
+        padding: 8px 0;
+        text-align: left;
+      }
+      .footer-nav .dropdown-menu li {
+        display: block;
+        margin: 0;
+      }
+      .footer-nav .dropdown-menu a {
+        display: block;
+        padding: 8px 18px;
+        font-size: 15px;
+        color: #fff;
+        border-radius: 0;
+        background: none;
+        opacity: 0.85;
+      }
+      .footer-nav .dropdown-menu a:hover {
+        background: #222;
+        color: #0049ae;
+        opacity: 1;
+      }
+      .footer-nav .dropdown:hover > .dropdown-menu,
+      .footer-nav .dropdown:focus-within > .dropdown-menu {
+        display: block;
+      }
+
+      /* Responsive: stack dropdowns */
+      @media (max-width: 800px) {
+        .footer-nav {
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
+        }
+        .footer-nav li {
+          width: 100%;
+          text-align: center;
+        }
+        .footer-nav .dropdown-menu {
+          position: static;
+          min-width: 0;
+          box-shadow: none;
+          background: #181818;
+          border-radius: 0 0 8px 8px;
+          padding: 0;
+        }
+        .footer-nav .dropdown-menu a {
+          padding: 10px 0;
+          font-size: 14px;
+        }
       }
 
       .footer-socials {
@@ -122,6 +197,9 @@
           font-size: 18px;
           margin: 0 8px;
         }
+        .footer-container {
+          height: auto;
+        }
       }
     </style>
     <footer class="servicehive-footer">
@@ -134,34 +212,116 @@
           />
           <p class="footer-description">
             At <strong>ServiceHive</strong>, a
-            <em>Ryuzentech Private Limited</em> venture, we’re more than a service
-            provider — we’re a passionate team of innovators driving impactful
-            solutions. With a culture built on growth, collaboration, and
-            challenge, we empower professionals to thrive while delivering
+            <em>Ryuzentech Private Limited</em> venture, we’re more than a
+            service provider — we’re a passionate team of innovators driving
+            impactful solutions. With a culture built on growth, collaboration,
+            and challenge, we empower professionals to thrive while delivering
             excellence across every project.
           </p>
         </div>
         <nav aria-label="Footer Navigation">
           <ul class="footer-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">AI Solutions</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="https://staging.praxisforge.com/">Home</a></li>
+            <li>
+              <a href="https://staging.praxisforge.com/ai-solutions/"
+                >AI Solutions</a
+              >
+            </li>
+            <li class="dropdown">
+              <a href="https://staging.praxisforge.com/services-2/">Services</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="https://staging.praxisforge.com/web-development/"
+                    >Website Development</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://staging.praxisforge.com/mobile-app-development/"
+                    >Mobile App Development</a
+                  >
+                </li>
+                <li>
+                  <a href="https://staging.praxisforge.com/digital-marketing/"
+                    >Digital Marketing</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://staging.praxisforge.com/ui-ux-research-design/"
+                    >UI/UX Research &amp; Design</a
+                  >
+                </li>
+                <li>
+                  <a href="https://staging.praxisforge.com/cloud-and-devops/"
+                    >Cloud and DevOps</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://staging.praxisforge.com/strategy-ai-consulting/"
+                    >Strategy Consulting</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://staging.praxisforge.com/portfolio/">Portfolio</a>
+            </li>
+            <li class="dropdown">
+              <a href="https://staging.praxisforge.com/products/">Products</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="https://staging.praxisforge.com/crm/"
+                    >Customer Relationship Management (CRM)</a
+                  >
+                </li>
+                <li>
+                  <a href="https://staging.praxisforge.com/ims/"
+                    >Inventory Management System (IMS)</a
+                  >
+                </li>
+                <li>
+                  <a href="https://staging.praxisforge.com/lms/"
+                    >Learning Management System (LMS)</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="https://staging.praxisforge.com/blog/">Blog</a></li>
+            <li class="dropdown">
+              <a href="https://staging.praxisforge.com/about-us/">About Us</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="https://staging.praxisforge.com/privacy/">Privacy</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="https://staging.praxisforge.com/contact-2/"
+                >Contact Us</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="https://staging.praxisforge.com/career/">Career</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <div class="footer-socials">
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/service-hive-166144331/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
             <i class="fab fa-linkedin-in"></i>
           </a>
           <a href="https://x.com" target="_blank" aria-label="X">
             <i class="fab fa-x-twitter"></i>
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/service_hive_tech/"
             target="_blank"
             aria-label="Instagram"
           >
@@ -172,7 +332,8 @@
           </a>
         </div>
         <p class="footer-copyright">
-          &copy; 2025 ServiceHive (Ryuzentech Private Limited). All rights reserved.
+          &copy; 2025 ServiceHive (Ryuzentech Private Limited). All rights
+          reserved.
         </p>
       </div>
     </footer>
