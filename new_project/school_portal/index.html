@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Portal - PraxisForge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --light-bg: #fff8f8;
+        --accent-light: #e9dfc3;
+        --primary: #1b56fd;
+        --primary-dark: #0118d8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light-bg);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* School Hero Section */
+      .school-hero {
+        background-color: var(--primary);
+        color: white;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .school-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        right: -50px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--accent-light);
+        border-radius: 50%;
+        opacity: 0.3;
+        z-index: 1;
+      }
+
+      .school-hero::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 400px;
+        height: 400px;
+        background-color: var(--primary-dark);
+        border-radius: 50%;
+        opacity: 0.2;
+        z-index: 1;
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-text {
+        flex: 1;
+        padding-right: 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--accent-light);
+        color: var(--primary-dark);
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        margin-right: 15px;
+      }
+
+      .btn:hover {
+        background-color: white;
+        color: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--accent-light);
+        color: var(--accent-light);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--accent-light);
+        color: var(--primary-dark);
+      }
+
+      /* Mission Section */
+      .mission {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .mission-content {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .mission-text {
+        flex: 1;
+      }
+
+      .mission-text h2 {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .mission-text h2::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary);
+      }
+
+      .mission-text p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .mission-image {
+        flex: 1;
+        position: relative;
+      }
+
+      .mission-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .mission-image::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 8px solid var(--accent-light);
+        border-radius: 10px;
+        top: 20px;
+        left: 20px;
+        z-index: -1;
+      }
+
+      /* Program Types Section */
+      .program-types {
+        padding: 80px 0;
+        background-color: var(--light-bg);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .program-types::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary);
+      }
+
+      .section-title p {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .programs-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .program-card {
+        width: calc(50% - 20px);
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .program-header {
+        background-color: var(--primary);
+        color: white;
+        padding: 20px 30px;
+      }
+
+      .program-header h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .program-header p {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+
+      .program-body {
+        padding: 30px;
+      }
+
+      .program-features {
+        margin-bottom: 30px;
+      }
+
+      .program-feature {
+        display: flex;
+        margin-bottom: 15px;
+      }
+
+      .feature-icon {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-right: 15px;
+        min-width: 24px;
+      }
+
+      .program-feature p {
+        margin-bottom: 0;
+        font-size: 1rem;
+        color: #555;
+      }
+
+      .program-focus {
+        margin-top: 20px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+      }
+
+      .program-focus h4 {
+        font-size: 1.2rem;
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+      }
+
+      .focus-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .focus-item {
+        background-color: var(--light-bg);
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        color: var(--primary-dark);
+      }
+
+      /* Outcome Section */
+      .outcomes {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .outcomes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .outcome-card {
+        background-color: var(--light-bg);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .outcome-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .outcome-icon {
+        width: 70px;
+        height: 70px;
+        background-color: white;
+        color: var(--primary);
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+      }
+
+      .outcome-card h3 {
+        font-size: 1.3rem;
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+      }
+
+      .outcome-card p {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      /* Eligibility Section */
+      .eligibility {
+        padding: 80px 0;
+        background-color: var(--accent-light);
+      }
+
+      .eligibility-content {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .eligibility-text {
+        flex: 1;
+      }
+
+      .eligibility-text h2 {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .eligibility-text h2::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary);
+      }
+
+      .eligibility-list {
+        list-style: none;
+      }
+
+      .eligibility-item {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      .eligibility-icon {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-right: 15px;
+        min-width: 24px;
+      }
+
+      .eligibility-item p {
+        margin-bottom: 0;
+        font-size: 1.1rem;
+        color: #555;
+      }
+
+      .eligibility-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .eligibility-image img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* FAQ Section */
+      .faq {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 40px auto 0;
+      }
+
+      .faq-item {
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background-color: var(--light-bg);
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .faq-question {
+        padding: 20px 30px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary-dark);
+        background-color: var(--light-bg);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .faq-question i {
+        color: var(--primary);
+        transition: transform 0.3s ease;
+      }
+
+      .faq-answer {
+        padding: 0 30px 20px;
+        font-size: 1rem;
+        color: #555;
+      }
+
+      /* CTA Section */
+      .cta {
+        padding: 80px 0;
+        background-color: var(--primary-dark);
+        color: white;
+        text-align: center;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.9;
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 992px) {
+        .hero-content,
+        .mission-content,
+        .eligibility-content {
+          flex-direction: column;
+        }
+
+        .hero-text,
+        .mission-text,
+        .eligibility-text {
+          padding-right: 0;
+          margin-bottom: 40px;
+          text-align: center;
+        }
+
+        .mission-text h2::after,
+        .eligibility-text h2::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .mission-image::before {
+          display: none;
+        }
+
+        .program-card {
+          width: 100%;
+          max-width: 500px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .outcomes-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-text h1,
+        .mission-text h2,
+        .eligibility-text h2,
+        .section-title h2,
+        .cta h2 {
+          font-size: 2rem;
+        }
+
+        .eligibility-item p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- School Hero Section -->
+    <section class="school-hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Empower Students with Future-Ready Skills</h1>
+          <p>
+            Bring cutting-edge tech education to your school with our 100%
+            remote learning programs.
+          </p>
+          <a href="#programs" class="btn">Our Programs</a>
+          <a href="#contact" class="btn btn-outline">Partner With Us</a>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://praxisforge.com/wp-content/uploads/2025/05/22881105_6706025.jpg"
+            alt="Students learning technology"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+      <div class="container mission-content">
+        <div class="mission-text">
+          <h2>Our Mission</h2>
+          <p>
+            At PraxisForge, we believe that the future of innovation begins in
+            the classroom—and more importantly, in a connected digital
+            classroom. Our mission is to equip school students from classes 6 to
+            10 with future-ready technical skills through engaging, hands-on
+            online learning experiences.
+          </p>
+          <p>
+            Through our 100% remote programs, students dive into the world of
+            technology, data science, and innovation with the guidance of expert
+            mentors from leading tech giants. We don't just teach theory—we
+            empower students to build, collaborate, and present real-world
+            projects, all from the convenience of their homes or school labs.
+          </p>
+          <p>
+            By partnering with schools, we aim to nurture a generation of
+            confident creators and critical thinkers who are ready for the
+            digital age.
+          </p>
+        </div>
+        <div class="mission-image">
+          <img
+            src="https://praxisforge.com/wp-content/uploads/2025/05/4363623_2304713-scaled.jpg"
+            alt="Digital classroom"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Types Section -->
+    <section id="programs" class="program-types">
+      <div class="container">
+        <div class="section-title">
+          <h2>Types of Programs</h2>
+          <p>
+            Flexible options to meet your school's curriculum and schedule
+            needs.
+          </p>
+        </div>
+        <div class="programs-container">
+          <div class="program-card">
+            <div class="program-header">
+              <h3>Online Summer Bootcamps</h3>
+              <p>2-Month Intensive Programs</p>
+            </div>
+            <div class="program-body">
+              <div class="program-features">
+                <div class="program-feature">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>Perfect for holiday engagement and skill building</p>
+                </div>
+                <div class="program-feature">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>Compact curriculum focused on core concepts</p>
+                </div>
+                <div class="program-feature">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>Project showcases at the end of the program</p>
+                </div>
+                <div class="program-feature">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>Ideal for sparking interest in technology</p>
+                </div>
+              </div>
+              <div class="program-focus">
+                <h4>Program Focus Areas:</h4>
+                <div class="focus-items">
+                  <span class="focus-item">Data Science</span>
+                  <span class="focus-item">MERN Stack Development</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="program-header">
+              <h3>Extended Mentorship Tracks</h3>
+              <p>6-Month Comprehensive Programs</p>
+            </div>
+            <div class="program-body">
+              <div class="program-features">
+                <div class="program-feature">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>In-depth learning with continuous mentor support</p>
+                </div>
+                <div class="program-feature">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>Progressive skill development through multiple projects</p>
+                </div>
+                <div class="program-feature">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>Regular assessment and progress tracking</p>
+                </div>
+                <div class="program-feature">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>Portfolio building for future academic pursuits</p>
+                </div>
+              </div>
+              <div class="program-focus">
+                <h4>Program Focus Areas:</h4>
+                <div class="focus-items">
+                  <span class="focus-item">Data Science</span>
+                  <span class="focus-item">MERN Stack Development</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcome Section -->
+    <section class="outcomes">
+      <div class="container">
+        <div class="section-title">
+          <h2>Program Outcomes</h2>
+          <p>What students gain from our comprehensive technology programs.</p>
+        </div>
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <div class="outcome-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Coding Confidence</h3>
+            <p>
+              Students develop proficiency and confidence using various online
+              tools and coding platforms.
+            </p>
+          </div>
+          <div class="outcome-card">
+            <div class="outcome-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <h3>Real-life Project Execution</h3>
+            <p>
+              Apply learning to create functional projects that solve real-world
+              problems.
+            </p>
+          </div>
+          <div class="outcome-card">
+            <div class="outcome-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Online Collaboration</h3>
+            <p>
+              Master digital collaboration tools and develop teamwork skills in
+              a virtual environment.
+            </p>
+          </div>
+          <div class="outcome-card">
+            <div class="outcome-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Tech-Savvy Communication</h3>
+            <p>
+              Learn to present technical concepts clearly and professionally in
+              digital formats.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section class="eligibility">
+      <div class="container eligibility-content">
+        <div class="eligibility-text">
+          <h2>Program Eligibility</h2>
+          <ul class="eligibility-list">
+            <li class="eligibility-item">
+              <div class="eligibility-icon">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <p>Open to students from classes 6 to 10</p>
+            </li>
+            <li class="eligibility-item">
+              <div class="eligibility-icon"><i class="fas fa-school"></i></div>
+              <p>Schools must provide a coordinator for program oversight</p>
+            </li>
+            <li class="eligibility-item">
+              <div class="eligibility-icon"><i class="fas fa-laptop"></i></div>
+              <p>Students must have access to internet and computing devices</p>
+            </li>
+            <li class="eligibility-item">
+              <div class="eligibility-icon"><i class="fas fa-clock"></i></div>
+              <p>Commitment to scheduled online sessions and project work</p>
+            </li>
+          </ul>
+        </div>
+        <div class="eligibility-image">
+          <img
+            src="https://praxisforge.com/wp-content/uploads/2025/05/22881108_6693896.jpg"
+            alt="Eligible students"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <p>Common questions about our school programs.</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              Are sessions online? <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, all programs are 100% remote via our dedicated online
+                platform, making them accessible from anywhere with an internet
+                connection.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Can students join from home? <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, all they need is a device (preferably a laptop or desktop
+                computer) and a reliable internet connection. Our platform is
+                designed to be accessible and user-friendly.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              What is required from schools? <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                A liaison teacher and coordination for sessions and student
+                monitoring. The school coordinator helps with communication,
+                scheduling, and ensuring student participation.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Are teachers involved? <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Not mandatory, but schools can choose to involve staff for
+                extended learning. Teachers are welcome to observe sessions and
+                integrate the content with their curriculum, but our mentors
+                lead all instruction.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              How do you monitor student engagement?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Through attendance logs, mentor reviews, and periodic
+                assessments. We provide regular progress reports to the school
+                coordinator and hold check-in meetings to discuss student
+                performance.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Do you provide certification? <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, digital certificates are awarded to students upon
+                successful completion of the program. These certificates detail
+                the skills acquired and projects completed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+      <div class="container">
+        <h2>Ready to Transform Your School's Tech Education?</h2>
+        <p>
+          Partner with PraxisForge to bring cutting-edge technology learning to
+          your students through our 100% remote programs.
+        </p>
+        <a href="#" class="btn">Request a Consultation</a>
+      </div>
+    </section>
+  </body>
+</html>
