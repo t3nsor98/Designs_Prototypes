@@ -3,201 +3,662 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PraxisForge Landing Page</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>PraxisForge - Where Future Innovators Are Forged</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --light-bg: #fff8f8;
+        --accent-light: #e9dfc3;
+        --primary: #1b56fd;
+        --primary-dark: #0118d8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light-bg);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Hero Section */
+      .hero {
+        background-color: var(--primary);
+        color: white;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        right: -50px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--accent-light);
+        border-radius: 50%;
+        opacity: 0.3;
+        z-index: 1;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 400px;
+        height: 400px;
+        background-color: var(--primary-dark);
+        border-radius: 50%;
+        opacity: 0.2;
+        z-index: 1;
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-text {
+        flex: 1;
+        padding-right: 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--accent-light);
+        color: var(--primary-dark);
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        margin-right: 15px;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-dark);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--accent-light);
+        color: var(--accent-light);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--accent-light);
+        color: var(--primary-dark);
+      }
+
+      /* Stats Section */
+      .stats {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .stats-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .stat-item {
+        flex: 1;
+        min-width: 200px;
+        margin: 20px;
+        padding: 30px;
+        background-color: var(--light-bg);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-10px);
+      }
+
+      .stat-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--primary-dark);
+      }
+
+      .stat-text {
+        font-size: 1.1rem;
+        color: #666;
+      }
+
+      /* Why Choose Section */
+      .why-choose {
+        padding: 80px 0;
+        background-color: var(--accent-light);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .why-choose::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 20px;
+      }
+
+      .section-title p {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .feature-item {
+        width: calc(50% - 40px);
+        margin: 20px;
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        display: flex;
+        transition: all 0.3s ease;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-right: 20px;
+        min-width: 50px;
+        text-align: center;
+      }
+
+      .feature-content h3 {
+        margin-bottom: 15px;
+        color: var(--primary-dark);
+        font-size: 1.3rem;
+      }
+
+      .feature-content p {
+        color: #666;
+        font-size: 1rem;
+      }
+
+      /* Partnerships Section */
+      .partnerships {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .partnership-benefits {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .partner-benefit {
+        width: calc(33.333% - 40px);
+        margin: 20px;
+        padding: 30px;
+        background-color: var(--light-bg);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .partner-benefit:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .benefit-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .partner-benefit h3 {
+        margin-bottom: 15px;
+        color: var(--primary-dark);
+      }
+
+      .partner-benefit p {
+        color: #666;
+      }
+
+      /* CTA Section */
+      .cta {
+        padding: 80px 0;
+        background-color: var(--primary-dark);
+        color: white;
+        text-align: center;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.9;
+      }
+
+      .steps {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+
+      .step {
+        display: flex;
+        align-items: center;
+        margin: 0 30px;
+      }
+
+      .step-number {
+        width: 40px;
+        height: 40px;
+        background-color: var(--accent-light);
+        color: var(--primary-dark);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-right: 15px;
+      }
+
+      .step-text {
+        text-align: left;
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 992px) {
+        .hero-content {
+          flex-direction: column;
+        }
+
+        .hero-text {
+          padding-right: 0;
+          margin-bottom: 40px;
+          text-align: center;
+        }
+
+        .feature-item,
+        .partner-benefit {
+          width: calc(50% - 40px);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .feature-item,
+        .partner-benefit {
+          width: 100%;
+        }
+
+        .steps {
+          flex-direction: column;
+        }
+
+        .step {
+          margin: 15px 0;
+        }
+
+        .stat-item {
+          min-width: calc(50% - 40px);
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+
+        .section-title h2,
+        .cta h2 {
+          font-size: 2rem;
+        }
+
+        .stat-item {
+          min-width: 100%;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-gray-50 text-gray-800 font-['Inter']">
+  <body>
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-50 to-indigo-50 py-20">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-5xl font-bold mb-6 text-gray-900 leading-tight">
-          Where Future Innovators Are <span class="text-blue-600">Forged</span>
-        </h2>
-        <p class="text-xl max-w-2xl mx-auto text-gray-600 leading-relaxed">
-          With hands-on remote projects and elite mentorship from Amazon,
-          Microsoft, and more, PraxisForge bridges the gap between classroom
-          theory and cutting-edge practice.
-        </p>
-      </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section class="py-16">
-      <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <p class="text-3xl font-bold text-blue-600 mb-2">800+</p>
-          <p class="text-gray-600">Students Trained</p>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Where Future Innovators Are Forged</h1>
+          <p>
+            Your launchpad to the real world. With hands-on remote projects and
+            elite online mentorship from industry giants like Amazon and
+            Microsoft, we're closing the gap between classroom theory and
+            cutting-edge industry practice.
+          </p>
+          <a href="#" class="btn">Get Started</a>
+          <a href="#" class="btn btn-outline">Learn More</a>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <p class="text-3xl font-bold text-blue-600 mb-2">60+</p>
-          <p class="text-gray-600">Real-World Projects</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <p class="text-3xl font-bold text-blue-600 mb-2">5+</p>
-          <p class="text-gray-600">Partner Institutions</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <p class="text-3xl font-bold text-blue-600 mb-2">15+</p>
-          <p class="text-gray-600">Expert Mentors</p>
+        <div class="hero-image">
+          <img
+            src="https://praxisforge.com/wp-content/uploads/2025/05/2149369110.jpg"
+            alt="Student working on a project"
+          />
         </div>
       </div>
     </section>
 
-    <!-- Why Choose Section -->
-    <section class="bg-white py-16">
-      <div class="container mx-auto px-4">
-        <h3 class="text-3xl font-bold text-center text-gray-900 mb-12">
-          Why Choose <span class="text-blue-600">PraxisForge</span>
-        </h3>
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <ul class="space-y-4">
-            <li class="flex items-start">
-              <svg class="w-6 h-6 text-blue-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span><strong class="text-gray-900">Learn from the Best:</strong> 
-                <span class="text-gray-600">Industry feedback in live settings.</span>
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-6 h-6 text-blue-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span><strong class="text-gray-900">Practice-First Learning:</strong> 
-                <span class="text-gray-600">Remote, project-based model.</span>
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-6 h-6 text-blue-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span><strong class="text-gray-900">Structured for Growth:</strong> 
-                <span class="text-gray-600">Programs for all levels.</span>
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-6 h-6 text-blue-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span><strong class="text-gray-900">Portfolio Building:</strong> 
-                <span class="text-gray-600">Showcase real projects.</span>
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-6 h-6 text-blue-600 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span><strong class="text-gray-900">Access Anywhere:</strong> 
-                <span class="text-gray-600">100% online programs.</span>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Partnerships -->
-    <section class="bg-gradient-to-r from-blue-50 to-indigo-50 py-16">
-      <div class="container mx-auto px-4">
-        <h3 class="text-3xl font-bold text-center text-gray-900 mb-8">
-          Our <span class="text-blue-600">Partnerships</span>
-        </h3>
-        <p class="max-w-3xl mx-auto text-center mb-12 text-gray-600 text-lg">
-          We collaborate with forward-thinking institutions to deliver
-          impactful, tech-forward education experiences.
-        </p>
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div class="bg-white rounded-lg p-8 shadow-sm">
-            <ul class="space-y-4">
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
-                </svg>
-                <span>Future-Ready Curriculum</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
-                </svg>
-                <span>Customisable Programs</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
-                </svg>
-                <span>Mentorship from Industry Leaders</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
-                </svg>
-                <span>Online Hackathons & Bootcamps</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
-                </svg>
-                <span>Exclusive Partner Benefits</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
-                </svg>
-                <span>Remote Operational Ease</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
-                </svg>
-                <span>Teacher Empowerment</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
-                </svg>
-                <span>Progress Reporting</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
-                </svg>
-                <span>Reputation Boost</span>
-              </li>
-              <li class="flex items-center space-x-3 text-gray-600">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
-                </svg>
-                <span>Enhanced Student Outcomes</span>
-              </li>
-            </ul>
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="stat-number">800+</div>
+            <div class="stat-text">Students Trained</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="stat-number">60+</div>
+            <div class="stat-text">Real-World Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-school"></i>
+            </div>
+            <div class="stat-number">5+</div>
+            <div class="stat-text">School Partnerships</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-number">15+</div>
+            <div class="stat-text">Expert Mentors</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Become a Partner -->
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4 text-center">
-        <h3 class="text-3xl font-bold text-gray-900 mb-8">
-          Become a Partner in <span class="text-blue-600">3 Steps</span>
-        </h3>
-        <div class="max-w-2xl mx-auto">
-          <ol class="space-y-6">
-            <li class="flex items-center">
-              <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">1</span>
-              <span class="text-gray-600">Submit the Interest Form on our website</span>
-            </li>
-            <li class="flex items-center">
-              <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">2</span>
-              <span class="text-gray-600">Schedule a Virtual Consultation</span>
-            </li>
-            <li class="flex items-center">
-              <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">3</span>
-              <span class="text-gray-600">Launch Tailored Remote Programs</span>
-            </li>
-          </ol>
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose PraxisForge</h2>
+          <p>
+            Transform education with experiential, tech-forward learning that
+            prepares students for the future.
+          </p>
         </div>
+        <div class="features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="feature-content">
+              <h3>Learn from the Best</h3>
+              <p>
+                Industry professionals guide students with real project feedback
+                in a live online setting.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="feature-content">
+              <h3>Practice-First Learning</h3>
+              <p>
+                Remote, project-based learning ensures students apply what they
+                learn in real scenarios.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="feature-content">
+              <h3>Structured for Growth</h3>
+              <p>
+                Programs crafted for different age and knowledge levels,
+                ensuring appropriate challenges.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="feature-content">
+              <h3>Portfolio Building</h3>
+              <p>
+                Every student finishes with tangible, deployable projects they
+                can showcase to future employers.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="feature-content">
+              <h3>Access Anywhere</h3>
+              <p>
+                All programs are 100% online, accessible from anywhere with
+                internet connection.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="feature-content">
+              <h3>Industry Connections</h3>
+              <p>
+                Build relationships with professionals from leading tech
+                companies around the world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section class="partnerships">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Partnerships</h2>
+          <p>
+            We collaborate with forward-thinking schools and colleges that share
+            our passion for experiential, tech-forward learning.
+          </p>
+        </div>
+        <div class="partnership-benefits">
+          <div class="partner-benefit">
+            <div class="benefit-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3>Future-Ready Curriculum</h3>
+            <p>
+              Bring cutting-edge online content and remote practical learning
+              directly to your students.
+            </p>
+          </div>
+          <div class="partner-benefit">
+            <div class="benefit-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Customisable Programs</h3>
+            <p>
+              Tailored to fit your institution's academic calendar and digital
+              capabilities.
+            </p>
+          </div>
+          <div class="partner-benefit">
+            <div class="benefit-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3>Industry Access</h3>
+            <p>
+              Students receive mentorship from professionals at Amazon,
+              Microsoft, and more.
+            </p>
+          </div>
+          <div class="partner-benefit">
+            <div class="benefit-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3>Virtual Event Collaborations</h3>
+            <p>
+              Co-host online hackathons, bootcamps, and tech showcases for
+              students.
+            </p>
+          </div>
+          <div class="partner-benefit">
+            <div class="benefit-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3>Partner Benefits</h3>
+            <p>
+              Early access to new online programs and special pricing for
+              partner institutions.
+            </p>
+          </div>
+          <div class="partner-benefit">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3>Progress Reports</h3>
+            <p>
+              Insightful feedback and reporting for school coordinators and
+              faculty.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2>Become a Partner Today</h2>
+        <p>
+          Join our network of forward-thinking educational institutions and help
+          prepare students for the digital future.
+        </p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">Submit the Interest Form</div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-text">Schedule a Virtual Consultation</div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-text">Launch Remote Programs</div>
+          </div>
+        </div>
+        <a href="#" class="btn">Get Started Now</a>
       </div>
     </section>
   </body>

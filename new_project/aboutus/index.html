@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About PraxisForge - Where Future Innovators Are Forged</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --light-bg: #fff8f8;
+        --accent-light: #e9dfc3;
+        --primary: #1b56fd;
+        --primary-dark: #0118d8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light-bg);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Page Header */
+      .page-header {
+        background-color: var(--primary);
+        color: white;
+        padding: 60px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-header::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        right: -50px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--accent-light);
+        border-radius: 50%;
+        opacity: 0.3;
+        z-index: 1;
+      }
+
+      .page-header::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 400px;
+        height: 400px;
+        background-color: var(--primary-dark);
+        border-radius: 50%;
+        opacity: 0.2;
+        z-index: 1;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      .header-content h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .header-content p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      /* About Introduction */
+      .about-intro {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .intro-content {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .intro-text {
+        flex: 1;
+      }
+
+      .intro-text h2 {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .intro-text h2::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary);
+      }
+
+      .intro-text p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .intro-image {
+        flex: 1;
+        position: relative;
+      }
+
+      .intro-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .intro-image::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 8px solid var(--accent-light);
+        border-radius: 10px;
+        top: 20px;
+        left: 20px;
+        z-index: -1;
+      }
+
+      /* What We Do Section */
+      .what-we-do {
+        padding: 80px 0;
+        background-color: var(--light-bg);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .what-we-do::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary);
+      }
+
+      .what-we-do-content {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .what-we-do-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .what-we-do-image img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .what-we-do-text {
+        flex: 1;
+      }
+
+      .what-we-do-text p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: #555;
+      }
+
+      /* Team Section */
+      .team {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .team-description {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 60px;
+      }
+
+      .team-description p {
+        font-size: 1.1rem;
+        color: #555;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .team-member {
+        background-color: var(--light-bg);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .member-image {
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .member-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .team-member:hover .member-image img {
+        transform: scale(1.1);
+      }
+
+      .member-info {
+        padding: 25px;
+        text-align: center;
+      }
+
+      .member-info h3 {
+        font-size: 1.3rem;
+        color: var(--primary-dark);
+        margin-bottom: 5px;
+      }
+
+      .member-position {
+        color: var(--primary);
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .member-bio {
+        font-size: 0.95rem;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .member-socials {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-icon {
+        width: 36px;
+        height: 36px;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background-color: var(--primary-dark);
+      }
+
+      /* Values Section */
+      .values {
+        padding: 80px 0;
+        background-color: var(--accent-light);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .values::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+
+      .values-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .value-card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      .value-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .value-icon {
+        width: 70px;
+        height: 70px;
+        background-color: var(--light-bg);
+        color: var(--primary);
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      .value-card h3 {
+        font-size: 1.3rem;
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+      }
+
+      .value-card p {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      /* CTA Section */
+      .cta {
+        padding: 80px 0;
+        background-color: var(--primary-dark);
+        color: white;
+        text-align: center;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.9;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--accent-light);
+        color: var(--primary-dark);
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: white;
+        color: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 992px) {
+        .intro-content,
+        .what-we-do-content {
+          flex-direction: column;
+        }
+
+        .intro-image {
+          order: -1;
+          margin-bottom: 40px;
+        }
+
+        .what-we-do-image {
+          margin-bottom: 40px;
+        }
+
+        .header-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .intro-text h2,
+        .section-title h2,
+        .cta h2 {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .team-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+
+        .values-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        .header-content h1 {
+          font-size: 2rem;
+        }
+
+        .intro-text h2,
+        .section-title h2,
+        .cta h2 {
+          font-size: 1.8rem;
+        }
+
+        .intro-text p,
+        .what-we-do-text p,
+        .team-description p,
+        .cta p {
+          font-size: 1rem;
+        }
+
+        .intro-image::before {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container header-content">
+        <h1>About PraxisForge</h1>
+        <p>
+          Meet the team of trailblazers who are redefining digital education.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Introduction -->
+    <section class="about-intro">
+      <div class="container intro-content">
+        <div class="intro-text">
+          <h2>Our Story</h2>
+          <p>
+            PraxisForge is a team of trailblazing technologists, educators, and
+            mentors who have worked with some of the world's most innovative
+            companies—Amazon, Microsoft, and more. As a digital-first and
+            remote-driven collective, we are redefining the way students learn
+            by combining project-based education with real-time mentorship.
+          </p>
+          <p>
+            Our global outlook and immersive online model ensure that learning
+            happens anytime, anywhere. We believe in breaking down geographical
+            barriers to quality education and creating opportunities for
+            students regardless of their location.
+          </p>
+          <p>
+            Our mentors and curriculum designers are industry veterans and
+            passionate educators with years of experience in software
+            engineering, data science, AI, product management, and edtech. Every
+            program is infused with their insights, bringing the digital
+            workplace into the digital classroom.
+          </p>
+        </div>
+        <div class="intro-image">
+          <img
+            src="https://praxisforge.com/wp-content/uploads/2025/05/2672335.jpg"
+            alt="PraxisForge Team"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="what-we-do">
+      <div class="container">
+        <div class="section-title">
+          <h2>What We Do</h2>
+        </div>
+        <div class="what-we-do-content">
+          <div class="what-we-do-image">
+            <img
+              src="https://praxisforge.com/wp-content/uploads/2025/05/2760429.jpg"
+              alt="Students learning online"
+            />
+          </div>
+          <div class="what-we-do-text">
+            <p>
+              Our mission is to bridge the gap between academic theory and
+              real-world industry practice. Through live online classes,
+              hands-on remote projects, and ongoing industry mentorship,
+              PraxisForge equips students with future-ready skills.
+            </p>
+            <p>
+              Whether you're a middle schooler curious about code or a college
+              student prepping for a tech career, we provide guided,
+              outcome-driven online learning experiences that prepare you for
+              the digital future.
+            </p>
+            <p>
+              We work with educational institutions and directly with students
+              to create customized learning pathways that address specific needs
+              and goals. Our flexible online approach means we can adapt to
+              different time zones, schedules, and learning styles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+      <div class="container">
+        <div class="section-title">
+          <h2>Meet Our Team</h2>
+        </div>
+        <div class="team-description">
+          <p>
+            Our team consists of industry experts with experience from top
+            technology companies, passionate educators, and curriculum designers
+            who are committed to transforming education through practical,
+            project-based learning.
+          </p>
+        </div>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-image">
+              <img
+                src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Team Member"
+              />
+            </div>
+            <div class="member-info">
+              <h3>Amogh Agarwal</h3>
+              <div class="member-position">CTO & Co-Founder</div>
+              <div class="member-bio">
+                Former Tech Lead at Microsoft with expertise in AI, machine
+                learning, and educational technology.
+              </div>
+              <div class="member-socials">
+                <a href="#" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-image">
+              <img
+                src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Team Member"
+              />
+            </div>
+            <div class="member-info">
+              <h3>Amogh Agarwal</h3>
+              <div class="member-position">CTO & Co-Founder</div>
+              <div class="member-bio">
+                Former Tech Lead at Microsoft with expertise in AI, machine
+                learning, and educational technology.
+              </div>
+              <div class="member-socials">
+                <a href="#" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-image">
+              <img
+                src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Team Member"
+              />
+            </div>
+            <div class="member-info">
+              <h3>Amogh Agarwal</h3>
+              <div class="member-position">CTO & Co-Founder</div>
+              <div class="member-bio">
+                Former Tech Lead at Microsoft with expertise in AI, machine
+                learning, and educational technology.
+              </div>
+              <div class="member-socials">
+                <a href="#" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Core Values</h2>
+        </div>
+        <div class="values-container">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Real-World Learning</h3>
+            <p>
+              Everything we teach is tied to practical, industry-grade outcomes
+              that translate directly to workplace skills.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Mentorship Matters</h3>
+            <p>
+              Every learner is guided by experienced industry mentors online who
+              provide personalized feedback and support.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Accessibility for All</h3>
+            <p>
+              Our online-first approach ensures anyone with internet access can
+              participate in high-quality learning experiences.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Innovation First</h3>
+            <p>
+              We continuously evolve our content to stay ahead of industry
+              trends and student needs in the digital landscape.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <h3>Student-Centered Design</h3>
+            <p>
+              Our programs are built around the learner's journey, from
+              curiosity to mastery, with clear pathways to success.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Impact Over Quantity</h3>
+            <p>
+              We measure success not by how many enroll, but by how many grow
+              and apply their skills in meaningful ways.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to Forge the Future?</h2>
+        <p>
+          Whether you're a student looking to enhance your skills or an
+          educational institution wanting to partner with us, we're here to help
+          you succeed in the digital age.
+        </p>
+        <a href="#" class="btn">Get Started Today</a>
+      </div>
+    </section>
+  </body>
+</html>
