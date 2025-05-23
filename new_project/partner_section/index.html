@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partnered Companies Section</title>
+    <style>
+      :root {
+        --light-bg: #fff8f8;
+        --accent-light: #e9dfc3;
+        --primary: #1b56fd;
+        --primary-dark: #0118d8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      /* Partnered Companies Section */
+      .partnered-companies {
+        padding: 60px 0;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .partnered-companies::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        width: 200px;
+        height: 200px;
+        background-color: var(--accent-light);
+        border-radius: 50%;
+        opacity: 0.3;
+      }
+
+      .partnered-companies::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-header h2 {
+        font-size: 2.2rem;
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-header h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: var(--primary);
+      }
+
+      .section-header p {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .partners-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+
+      .partner-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: var(--light-bg);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        min-width: 200px;
+      }
+
+      .partner-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .partner-logo {
+        width: 120px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
+
+      .partner-logo img {
+        max-width: 100px;
+        max-height: 60px;
+        object-fit: contain;
+      }
+
+      .partner-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--primary-dark);
+        text-align: center;
+      }
+
+      .partner-description {
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 768px) {
+        .partners-container {
+          gap: 30px;
+        }
+
+        .partner-item {
+          min-width: 160px;
+        }
+
+        .partner-logo {
+          width: 100px;
+          height: 70px;
+        }
+
+        .partner-logo img {
+          max-width: 80px;
+          max-height: 50px;
+        }
+
+        .partners-minimal {
+          gap: 20px;
+        }
+
+        .minimal-partner {
+          padding: 12px 20px;
+        }
+
+        .section-header h2 {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        .partners-container,
+        .partners-minimal {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Partnered Companies Section -->
+    <section class="partnered-companies">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Partnered Companies</h2>
+          <p>Learn from industry experts at leading technology companies</p>
+        </div>
+        <div class="partners-container">
+          <div class="partner-item">
+            <div class="partner-logo">
+              <img
+                src="https://msblogs.thesourcemediaassets.com/2012/08/8867.Microsoft_5F00_Logo_2D00_for_2D00_screen.jpg"
+                alt="Microsoft Logo"
+              />
+            </div>
+            <div class="partner-name">Microsoft</div>
+            <div class="partner-description">Cloud & Enterprise Solutions</div>
+          </div>
+          <div class="partner-item">
+            <div class="partner-logo">
+              <img
+                src="https://logolook.net/wp-content/uploads/2023/09/Amazon-Web-Services-Logo.png"
+                alt="Amazon AWS Logo"
+              />
+            </div>
+            <div class="partner-name">Amazon AWS</div>
+            <div class="partner-description">Cloud Computing Platform</div>
+          </div>
+          <div class="partner-item">
+            <div class="partner-logo">
+              <img
+                src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_1080,q_100,w_1080/v1/gcs/platform-data-goog/events/google-cloud-platform-gcp-small-square%20thumbnail.png"
+                alt="Google Cloud Logo"
+              />
+            </div>
+            <div class="partner-name">Google Cloud</div>
+            <div class="partner-description">AI & Cloud Infrastructure</div>
+          </div>
+          <div class="partner-item">
+            <div class="partner-logo">
+              <img
+                src="https://images.samsung.com/is/image/samsung/assets/us/about-us/brand/logo/mo/360_197_1.png?$720_N_PNG$"
+                alt="Samsung R&D Logo"
+              />
+            </div>
+            <div class="partner-name">Samsung R&D</div>
+            <div class="partner-description">Innovation & Development</div>
+          </div>
+          <div class="partner-item">
+            <div class="partner-logo">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
+                alt="IIT Madras Logo"
+              />
+            </div>
+            <div class="partner-name">IIT Madras</div>
+            <div class="partner-description">Technical Excellence</div>
+          </div>
+          <div class="partner-item">
+            <div class="partner-logo">
+              <img
+                src="https://www.iitmandi.ac.in/images/logo_hires.jpg"
+                alt="IIT Mandi Logo"
+              />
+            </div>
+            <div class="partner-name">IIT Mandi</div>
+            <div class="partner-description">Research & Innovation</div>
+          </div>
+          <div class="partner-item">
+            <div class="partner-logo">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkNBVYhARyI8EaN-ns9nRykcpty0qliIy62w&s"
+                alt="IIM Ahmedabad Logo"
+              />
+            </div>
+            <div class="partner-name">IIM Ahmedabad</div>
+            <div class="partner-description">Management Excellence</div>
+          </div>
+          <div class="partner-item">
+            <div class="partner-logo">
+              <img
+                src="https://avatars.githubusercontent.com/u/4265350?s=280&v=4"
+                alt="McKinsey Logo"
+              />
+            </div>
+            <div class="partner-name">McKinsey</div>
+            <div class="partner-description">Strategy & Consulting</div>
+          </div>
+          <div class="partner-item">
+            <div class="partner-logo">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5jC1fgEVAvQzkyXGN1-UE49uHX99egwbi9A&s"
+                alt="Warner Bros Logo"
+              />
+            </div>
+            <div class="partner-name">Warner Bros</div>
+            <div class="partner-description">Media & Entertainment</div>
+          </div>
+          <div class="partner-item">
+            <div class="partner-logo">
+              <img
+                src="https://brandlogos.net/wp-content/uploads/2013/06/volvo-eps-vector-logo.png"
+                alt="Volvo Logo"
+              />
+            </div>
+            <div class="partner-name">Volvo</div>
+            <div class="partner-description">Automotive Innovation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
