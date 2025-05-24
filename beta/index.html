@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeX Programs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+      :root {
+        --light-bg: #fff8f8;
+        --accent-light: #e9dfc3;
+        --primary: #4f7bf5a9;
+        --primary-dark: #0118d8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light-bg);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Course Tracks Section */
+      .course-tracks {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary);
+      }
+
+      .section-title p {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .course-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .course-card {
+        width: calc(50% - 15px);
+        min-width: 300px;
+        background-color: var(--light-bg);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .course-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .course-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .course-card:hover .course-image img {
+        transform: scale(1.1);
+      }
+
+      .course-content {
+        padding: 25px;
+      }
+
+      .course-age {
+        background-color: var(--primary);
+        color: white;
+        font-size: 0.8rem;
+        padding: 5px 15px;
+        border-radius: 50px;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      .course-content h3 {
+        font-size: 1.4rem;
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+      }
+
+      .course-content p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .course-details {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      .course-duration,
+      .course-format {
+        display: flex;
+        align-items: center;
+      }
+
+      .course-duration i,
+      .course-format i {
+        margin-right: 5px;
+        color: var(--primary);
+      }
+
+      .btnc {
+        display: inline-block;
+        background-color: var(--primary);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+        margin-top: 15px;
+      }
+
+      .btnc:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 768px) {
+        .course-card {
+          width: 100%;
+          max-width: 400px;
+        }
+
+        .section-title h2 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Course Tracks Section -->
+    <section id="courses" class="course-tracks">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our CodeX Programs</h2>
+          <p>
+            Foundation programs designed for young learners to explore and build their tech skills.
+          </p>
+        </div>
+        <div class="course-cards">
+          <div class="course-card">
+            <div class="course-image">
+              <img
+                src="https://praxisforge.com/wp-content/uploads/2025/05/14230944_5437683.jpg"
+                alt="Intro to Tech Course"
+              />
+            </div>
+            <div class="course-content">
+              <span class="course-age">Classes 6-8</span>
+              <h3>CodeX: Proto</h3>
+              <p>
+                Online foundations and mini-projects to spark creativity and
+                tech interest in young minds.
+              </p>
+              <div class="course-details">
+                <div class="course-duration">
+                  <i class="far fa-clock"></i> 10-week intensive
+                </div>
+                <div class="course-format">
+                  <i class="fas fa-laptop"></i> Online delivery
+                </div>
+              </div>
+              <a href="https://praxisforge.com/codex-proto/" class="btnc">Know More</a>
+            </div>
+          </div>
+          <div class="course-card">
+            <div class="course-image">
+              <img
+                src="https://praxisforge.com/wp-content/uploads/2025/05/22434663_6591922.jpg"
+                alt="Data Science Course"
+              />
+            </div>
+            <div class="course-content">
+              <span class="course-age">Classes 9-10</span>
+              <h3>CodeX: Matrix</h3>
+              <p>
+                Project-based learning focusing on data analysis, visualization,
+                and emerging technologies.
+              </p>
+              <div class="course-details">
+                <div class="course-duration">
+                  <i class="far fa-clock"></i> 10-week immersive
+                </div>
+                <div class="course-format">
+                  <i class="fas fa-laptop"></i> Online delivery
+                </div>
+              </div>
+              <a href="https://praxisforge.com/codex-matrix/" class="btnc">Know More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>
