@@ -1,0 +1,171 @@
+/* Code By Digbijaya */
+.sidr a,
+.sidr-class-menu a,
+.sidr-class-menu-item a,
+#sidr-main a,
+#sidr-main .sidr-class-menu a,
+#sidr-main .sidr-class-menu-item a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Main Sidr Container Enhancement */
+#sidr-main.sidr,
+.sidr.right {
+    background: #ffffff !important;
+    border-left: 3px solid #3b82f6 !important;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1) !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Menu Title/Header Enhancement */
+.pad_menutitle {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+    padding: 20px !important;
+    color: white !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.pad_menutitle i {
+    color: white !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Menu Items Styling */
+.sidr-class-menu-item,
+#sidr-main .sidr-class-menu-item {
+    border-bottom: 1px solid #e5e7eb !important;
+    background: transparent !important;
+}
+
+.sidr-class-menu-item:last-child {
+    border-bottom: none !important;
+}
+
+/* Menu Links with Better Visibility */
+.sidr-class-menu-item > a,
+#sidr-main .sidr-class-menu-item > a {
+    padding: 16px 20px !important;
+    color: #374151 !important;
+    background: transparent !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Hover Effects */
+.sidr-class-menu-item > a:hover,
+#sidr-main .sidr-class-menu-item > a:hover {
+    background: #f8fafc !important;
+    color: #1d4ed8 !important;
+    padding-left: 25px !important;
+    border-left: 4px solid #3b82f6 !important;
+}
+
+/* Current/Active Menu Item */
+.sidr-class-current-menu-item > a,
+.sidr-class-current_page_item > a,
+#sidr-main .sidr-class-current-menu-item > a,
+#sidr-main .sidr-class-current_page_item > a {
+    background: #eff6ff !important;
+    color: #1d4ed8 !important;
+    border-left: 4px solid #3b82f6 !important;
+    font-weight: 600 !important;
+}
+
+/* Submenu Styling */
+.sidr-class-sub-menu,
+#sidr-main .sidr-class-sub-menu {
+    background: #f9fafb !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sidr-class-sub-menu a,
+#sidr-main .sidr-class-sub-menu a {
+    padding: 12px 20px 12px 40px !important;
+    color: #6b7280 !important;
+    font-size: 14px !important;
+    background: transparent !important;
+    border: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.sidr-class-sub-menu a:hover,
+#sidr-main .sidr-class-sub-menu a:hover {
+    color: #1d4ed8 !important;
+    background: #e0f2fe !important;
+    padding-left: 45px !important;
+}
+
+/* Arrow Enhancement */
+.sidr-class-menu_arrow,
+.sidr-class-fa-angle-down {
+    color: #9ca3af !important;
+    float: right !important;
+    margin-top: 2px !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* Remove any text hiding elements */
+.sidr-class-menu-item a::before,
+.sidr-class-menu-item a::after {
+    display: none !important;
+}
+
+/* Ensure text is not clipped or hidden */
+.sidr-inner,
+.sidr-class-menu-header,
+.sidr-class-menu {
+    overflow: visible !important;
+    text-indent: 0 !important;
+}
+
+/* Fix any potential z-index issues */
+.sidr-class-menu-item a,
+#sidr-main .sidr-class-menu-item a {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .sidr-class-menu-item > a,
+    #sidr-main .sidr-class-menu-item > a {
+        padding: 14px 16px !important;
+        font-size: 16px !important;
+    }
+    
+    .sidr-class-sub-menu a,
+    #sidr-main .sidr-class-sub-menu a {
+        padding: 10px 16px 10px 32px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* Additional specificity for stubborn themes */
+body .sidr a,
+body .sidr-class-menu a,
+body .sidr-class-menu-item a,
+body #sidr-main a,
+body #sidr-main .sidr-class-menu a,
+body #sidr-main .sidr-class-menu-item a {
+    color: #374151 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-indent: 0 !important;
+    font-size: 16px !important;
+}

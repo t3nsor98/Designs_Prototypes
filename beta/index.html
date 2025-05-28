@@ -1,30 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeX Programs</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing - PraxisForge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
       :root {
         --light-bg: #fff8f8;
         --accent-light: #e9dfc3;
         --primary: #4f7bf5a9;
-        --primary-dark: #0118d8;
+        --primary-dark: #4f7bf5a9;
       }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
+     
 
-      body {
-        background-color: var(--light-bg);
-        color: #333;
-        line-height: 1.6;
-      }
+    
 
       .container {
         width: 100%;
@@ -33,8 +27,67 @@
         padding: 0 20px;
       }
 
-      /* Course Tracks Section */
-      .course-tracks {
+      /* Pricing Hero Section */
+      .pricing-hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+        color: white;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pricing-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        right: -50px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--accent-light);
+        border-radius: 50%;
+        opacity: 0.3;
+        z-index: 1;
+      }
+
+      .pricing-hero::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 400px;
+        height: 400px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        opacity: 0.2;
+        z-index: 1;
+      }
+
+      .hero-content {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .hero-content p {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      /* Pricing Section */
+      .pricing-section {
         padding: 80px 0;
         background-color: white;
       }
@@ -45,7 +98,7 @@
       }
 
       .section-title h2 {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 4vw, 2.5rem);
         color: var(--primary-dark);
         margin-bottom: 20px;
         position: relative;
@@ -64,102 +117,165 @@
       }
 
       .section-title p {
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
         color: #666;
         max-width: 800px;
         margin: 0 auto;
       }
 
-      .course-cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+      .pricing-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
+        margin-top: 40px;
       }
 
-      .course-card {
-        width: calc(50% - 15px);
-        min-width: 300px;
+      .pricing-card {
         background-color: var(--light-bg);
-        border-radius: 10px;
+        border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        position: relative;
       }
 
-      .course-card:hover {
+      .pricing-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        border-color: var(--primary);
       }
 
-      .course-image {
-        height: 200px;
+      .card-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+        color: white;
+        padding: 30px;
+        position: relative;
         overflow: hidden;
       }
 
-      .course-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
+      .card-header::before {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        top: -75px;
+        right: -75px;
       }
 
-      .course-card:hover .course-image img {
-        transform: scale(1.1);
+      .card-header::after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        bottom: -50px;
+        left: -50px;
       }
 
-      .course-content {
-        padding: 25px;
+      .program-type {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        opacity: 0.9;
       }
 
-      .course-age {
-        background-color: var(--primary);
-        color: white;
-        font-size: 0.8rem;
-        padding: 5px 15px;
-        border-radius: 50px;
-        display: inline-block;
+      .program-name {
+        font-size: clamp(1.2rem, 3vw, 1.6rem);
+        font-weight: 700;
         margin-bottom: 15px;
+        line-height: 1.3;
       }
 
-      .course-content h3 {
-        font-size: 1.4rem;
+      .price-container {
+        display: flex;
+        align-items: baseline;
+        gap: 15px;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
+        font-weight: 700;
+      }
+
+      .original-price {
+        font-size: 1.2rem;
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+
+      .early-bird-badge {
+        background-color: var(--accent-light);
         color: var(--primary-dark);
-        margin-bottom: 15px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-left: auto;
       }
 
-      .course-content p {
+      .price-period {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-bottom: 5px;
+      }
+
+      .savings {
+        font-size: 0.85rem;
+        color: var(--accent-light);
+        font-weight: 600;
+      }
+
+      .card-body {
+        padding: 30px;
+      }
+
+      .course-description {
         font-size: 1rem;
         color: #666;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+        line-height: 1.6;
       }
 
-      .course-details {
+      .features-list {
+        list-style: none;
+        margin-bottom: 30px;
+      }
+
+      .feature-item {
         display: flex;
-        justify-content: space-between;
-        border-top: 1px solid #eee;
-        padding-top: 15px;
-        font-size: 0.9rem;
-        color: #777;
+        margin-bottom: 12px;
+        align-items: flex-start;
       }
 
-      .course-duration,
-      .course-format {
-        display: flex;
-        align-items: center;
-      }
-
-      .course-duration i,
-      .course-format i {
-        margin-right: 5px;
+      .feature-icon {
         color: var(--primary);
+        margin-right: 12px;
+        min-width: 20px;
+        font-size: 1.1rem;
       }
 
-      .btnc {
+      .feature-text {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.4;
+      }
+
+      .btn {
         display: inline-block;
+        width: 100%;
         background-color: var(--primary);
         color: white;
-        padding: 12px 30px;
+        padding: 15px 30px;
         border-radius: 50px;
         font-weight: 600;
         text-decoration: none;
@@ -167,91 +283,620 @@
         border: none;
         cursor: pointer;
         text-align: center;
-        width: 100%;
-        margin-top: 15px;
+        font-size: 1rem;
+        margin-bottom: 15px;
       }
 
-      .btnc:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      .btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      /* Sign-Up Process */
+      .signup-process {
+        padding: 80px 0;
+        background-color: var(--light-bg);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .signup-process::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+
+      .process-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        position: relative;
+      }
+
+      .process-steps::before {
+        content: "";
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--accent-light);
+        z-index: 1;
+      }
+
+      .step {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        width: 33.333%;
+      }
+
+      .step-number {
+        width: 80px;
+        height: 80px;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0 auto 20px;
+        position: relative;
+        border: 5px solid var(--light-bg);
+      }
+
+      .step-number i {
+        font-size: 2rem;
+      }
+
+      .step-content h3 {
+        font-size: 1.2rem;
+        color: var(--primary-dark);
+        margin-bottom: 10px;
+      }
+
+      .step-content p {
+        font-size: 0.95rem;
+        color: #666;
+        max-width: 250px;
+        margin: 0 auto;
+      }
+
+      /* Discounts Section */
+      .discounts {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .discounts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .discount-card {
+        background-color: var(--light-bg);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .discount-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .discount-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .discount-card h3 {
+        font-size: 1.3rem;
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+      }
+
+      .discount-card p {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* CTA Section */
+      .cta {
+        padding: 80px 0;
+        background-color: var(--primary-dark);
+        color: white;
+        text-align: center;
+      }
+
+      .cta h2 {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        margin-bottom: 20px;
+      }
+
+      .cta p {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.9;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background-color: var(--accent-light);
+        color: var(--primary-dark);
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .cta-btn:hover {
+        background-color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       }
 
       /* Responsive Styles */
-      @media screen and (max-width: 768px) {
-        .course-card {
-          width: 100%;
-          max-width: 400px;
+      @media screen and (max-width: 992px) {
+        .process-steps {
+          flex-direction: column;
+          align-items: center;
         }
 
-        .section-title h2 {
-          font-size: 2.2rem;
+        .process-steps::before {
+          display: none;
+        }
+
+        .step {
+          width: 100%;
+          max-width: 300px;
+          margin-bottom: 40px;
+        }
+
+        .pricing-cards {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 25px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .pricing-cards {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        .discounts-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .card-header {
+          padding: 25px;
+        }
+
+        .card-body {
+          padding: 25px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .pricing-hero {
+          padding: 60px 0;
+        }
+
+        .pricing-section {
+          padding: 60px 0;
+        }
+
+        .container {
+          padding: 0 15px;
         }
       }
     </style>
-</head>
-<body>
-    <!-- Course Tracks Section -->
-    <section id="courses" class="course-tracks">
+  </head>
+  <body>
+    <!-- Pricing Hero Section -->
+    <section class="pricing-hero">
+      <div class="container hero-content">
+        <h1>Investing in Future-Ready Skills</h1>
+        <p>
+          Our remote-first model makes high-quality education accessible.
+          Pricing is program-based and includes all mentorship, access to live
+          sessions, learning material, and certification.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
       <div class="container">
         <div class="section-title">
-          <h2>Our CodeX Programs</h2>
+          <h2>Transparent Pricing</h2>
           <p>
-            Foundation programs designed for young learners to explore and build their tech skills.
+            Choose the right program that fits your educational needs and goals.
+            Early bird pricing available for limited time!
           </p>
         </div>
-        <div class="course-cards">
-          <div class="course-card">
-            <div class="course-image">
-              <img
-                src="https://praxisforge.com/wp-content/uploads/2025/05/14230944_5437683.jpg"
-                alt="Intro to Tech Course"
-              />
+
+        <div class="pricing-cards">
+          <!-- CodeX: Proto -->
+          <div class="pricing-card">
+            <div class="card-header">
+              <div class="program-type">Classes 6-8</div>
+              <div class="program-name">CodeX: Proto</div>
+              <div class="price-container">
+                <div class="price">₹5,999</div>
+                <div class="original-price">₹6,999</div>
+                <div class="early-bird-badge">Early Bird</div>
+              </div>
+              <div class="price-period">10-week intensive</div>
+              <div class="savings">Save ₹1,000 with Early Bird pricing!</div>
             </div>
-            <div class="course-content">
-              <span class="course-age">Classes 6-8</span>
-              <h3>CodeX: Proto</h3>
-              <p>
+            <div class="card-body">
+              <div class="course-description">
                 Online foundations and mini-projects to spark creativity and
                 tech interest in young minds.
-              </p>
-              <div class="course-details">
-                <div class="course-duration">
-                  <i class="far fa-clock"></i> 10-week intensive
-                </div>
-                <div class="course-format">
-                  <i class="fas fa-laptop"></i> Online delivery
-                </div>
               </div>
-              <a href="https://praxisforge.com/codex-proto/" class="btnc">Know More</a>
+              <ul class="features-list">
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Live online mentorship sessions
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Introduction to programming fundamentals
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Creative mini-projects and challenges
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">100% online delivery</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Digital certificate upon completion
+                  </div>
+                </li>
+              </ul>
+              <a href="#" class="btn">Enroll Now</a>
+              <a href="#" class="btn btn-outline">Know More</a>
             </div>
           </div>
-          <div class="course-card">
-            <div class="course-image">
-              <img
-                src="https://praxisforge.com/wp-content/uploads/2025/05/22434663_6591922.jpg"
-                alt="Data Science Course"
-              />
+
+          <!-- CodeX: Matrix -->
+          <div class="pricing-card">
+            <div class="card-header">
+              <div class="program-type">Classes 9-10</div>
+              <div class="program-name">CodeX: Matrix</div>
+              <div class="price-container">
+                <div class="price">₹7,999</div>
+                <div class="original-price">₹8,999</div>
+                <div class="early-bird-badge">Early Bird</div>
+              </div>
+              <div class="price-period">10-week immersive</div>
+              <div class="savings">Save ₹1,000 with Early Bird pricing!</div>
             </div>
-            <div class="course-content">
-              <span class="course-age">Classes 9-10</span>
-              <h3>CodeX: Matrix</h3>
-              <p>
+            <div class="card-body">
+              <div class="course-description">
                 Project-based learning focusing on data analysis, visualization,
                 and emerging technologies.
-              </p>
-              <div class="course-details">
-                <div class="course-duration">
-                  <i class="far fa-clock"></i> 10-week immersive
-                </div>
-                <div class="course-format">
-                  <i class="fas fa-laptop"></i> Online delivery
-                </div>
               </div>
-              <a href="https://praxisforge.com/codex-matrix/" class="btnc">Know More</a>
+              <ul class="features-list">
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">Advanced programming concepts</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Data analysis and visualization
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">Real-world project portfolio</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">Emerging technology exposure</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">100% online delivery</div>
+                </li>
+              </ul>
+              <a href="#" class="btn">Enroll Now</a>
+              <a href="#" class="btn btn-outline">Know More</a>
+            </div>
+          </div>
+
+          <!-- DATAX: The Industry Crossover -->
+          <div class="pricing-card">
+            <div class="card-header">
+              <div class="program-type">College Students</div>
+              <div class="program-name">DATAX: The Industry Crossover</div>
+              <div class="price-container">
+                <div class="price">₹12,000</div>
+                <div class="original-price">₹15,000</div>
+                <div class="early-bird-badge">Early Bird</div>
+              </div>
+              <div class="price-period">10-week immersive</div>
+              <div class="savings">Save ₹3,000 with Early Bird pricing!</div>
+            </div>
+            <div class="card-body">
+              <div class="course-description">
+                Master advanced analytics, Python programming, and machine
+                learning models with real projects.
+              </div>
+              <ul class="features-list">
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">Advanced Python programming</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Machine learning model development
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Industry-standard analytics projects
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Career guidance and portfolio building
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">100% online delivery</div>
+                </li>
+              </ul>
+              <a href="#" class="btn">Enroll Now</a>
+              <a href="#" class="btn btn-outline">Know More</a>
+            </div>
+          </div>
+
+          <!-- MERNX - The Industry Crossover -->
+          <div class="pricing-card">
+            <div class="card-header">
+              <div class="program-type">College Students</div>
+              <div class="program-name">MERNX - The Industry Crossover</div>
+              <div class="price-container">
+                <div class="price">₹12,000</div>
+                <div class="original-price">₹15,000</div>
+                <div class="early-bird-badge">Early Bird</div>
+              </div>
+              <div class="price-period">10-week immersive</div>
+              <div class="savings">Save ₹3,000 with Early Bird pricing!</div>
+            </div>
+            <div class="card-body">
+              <div class="course-description">
+                Build full-stack web applications with MongoDB, Express, React,
+                and Node.js under expert guidance.
+              </div>
+              <ul class="features-list">
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">Complete MERN stack mastery</div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Full-stack web application projects
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Industry-ready development skills
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">
+                    Professional portfolio development
+                  </div>
+                </li>
+                <li class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <div class="feature-text">100% online delivery</div>
+                </li>
+              </ul>
+              <a href="#" class="btn">Enroll Now</a>
+              <a href="#" class="btn btn-outline">Know More</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-</body>
+
+    <!-- Sign-Up Process -->
+    <section class="signup-process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Simple Sign-Up Process</h2>
+          <p>Getting started with PraxisForge is quick and easy.</p>
+        </div>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="step-content">
+              <h3>Choose a Course</h3>
+              <p>
+                Browse our program offerings and select the one that best
+                matches your educational goals.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">
+              <i class="fas fa-user-edit"></i>
+            </div>
+            <div class="step-content">
+              <h3>Fill in Your Details</h3>
+              <p>
+                Complete the registration form with your personal and academic
+                information.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <div class="step-content">
+              <h3>Secure Your Seat</h3>
+              <p>
+                Make your payment online to confirm your enrollment in the
+                program.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Discounts Section -->
+    <section class="discounts">
+      <div class="container">
+        <div class="section-title">
+          <h2>Special Offers & Savings</h2>
+          <p>
+            Take advantage of our limited-time offers and save on your learning
+            journey.
+          </p>
+        </div>
+        <div class="discounts-grid">
+          <div class="discount-card">
+            <div class="discount-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Early Bird Discount</h3>
+            <p>
+              Register now and save ₹1,000 on school courses and ₹3,000 on
+              college courses. Limited time offer - secure your spot today!
+            </p>
+          </div>
+          <div class="discount-card">
+            <div class="discount-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Group Enrollments</h3>
+            <p>
+              Schools and colleges can avail special group rates when enrolling
+              multiple students. Contact us for custom packages and additional
+              savings.
+            </p>
+          </div>
+          <div class="discount-card">
+            <div class="discount-icon">
+              <i class="fas fa-share-alt"></i>
+            </div>
+            <h3>Referral Program</h3>
+            <p>
+              Refer a friend who enrolls in any program and both of you receive
+              ₹1,500 credit towards future courses or workshops.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to Invest in Future Skills?</h2>
+        <p>
+          Join thousands of students who have transformed their learning journey
+          with PraxisForge's mentor-guided programs. Early bird pricing ends
+          soon!
+        </p>
+        <a href="#" class="cta-btn">Enroll Now & Save</a>
+      </div>
+    </section>
+  </body>
 </html>
