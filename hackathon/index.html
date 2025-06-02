@@ -1,682 +1,722 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PraxisForge Hackathon 2025 | 24-Hour Innovation Challenge</title>
+    <!-- Add FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #002a70 0%, #004bb5 100%);
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #002a70 0%, #004bb5 100%);
+        color: white;
+        padding: 120px 0 80px;
+        text-align: center;
+      }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-        }
+      .hero .subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+      .countdown {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem;
+        border-radius: 15px;
+        margin: 2rem auto;
+        max-width: 400px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
+      .countdown h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
 
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
+      .countdown-timer {
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: "Courier New", monospace;
+      }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-        }
+      .cta-buttons {
+        margin-top: 3rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
 
+      .btn {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        background: linear-gradient(45deg, #002a70, #004bb5);
+        color: white;
+        box-shadow: 0 4px 15px rgba(0, 42, 112, 0.4);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Main Content */
+      .main-content {
+        background: white;
+        margin-top: -50px;
+        border-radius: 30px 30px 0 0;
+        position: relative;
+        z-index: 10;
+      }
+
+      .section {
+        padding: 4rem 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .section:last-child {
+        border-bottom: none;
+      }
+
+      .section h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: #002a70;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .feature-card {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        transition: transform 0.3s;
+        border: 1px solid #dee2e6;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature-icon i {
+        font-size: 3rem;
+        color: #002a70;
+      }
+
+      .feature-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: #002a70;
+      }
+
+      .prize-card {
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        color: #002a70;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+      }
+
+      .prize-amount {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .tracks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .track-card {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 10px;
+        border-left: 4px solid #002a70;
+      }
+
+      .track-card h4 {
+        color: #002a70;
+        margin-bottom: 0.5rem;
+      }
+
+      .testimonial {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 1rem 0;
+        border-left: 4px solid #002a70;
+      }
+
+      .testimonial blockquote {
+        font-style: italic;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+
+      .testimonial cite {
+        font-weight: bold;
+        color: #002a70;
+      }
+
+      .themes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .theme-card {
+        background: linear-gradient(135deg, #002a70, #004bb5);
+        color: white;
+        padding: 2rem;
+        border-radius: 15px;
+        transition: transform 0.3s;
+      }
+
+      .theme-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .theme-card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      .faq-item {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+      }
+
+      .faq-question {
+        font-weight: bold;
+        color: #002a70;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .countdown {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem auto;
-            max-width: 400px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .countdown h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .countdown-timer {
-            font-size: 2rem;
-            font-weight: bold;
-            font-family: 'Courier New', monospace;
+          font-size: 2.5rem;
         }
 
         .cta-buttons {
-            margin-top: 3rem;
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+          flex-direction: column;
+          align-items: center;
         }
 
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Main Content */
-        .main-content {
-            background: white;
-            margin-top: -50px;
-            border-radius: 30px 30px 0 0;
-            position: relative;
-            z-index: 10;
-        }
-
-        .section {
-            padding: 4rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .section:last-child {
-            border-bottom: none;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #2c3e50;
+        .nav-links {
+          display: none;
         }
 
         .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+          grid-template-columns: 1fr;
         }
+      }
 
-        .feature-card {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s;
-            border: 1px solid #dee2e6;
-        }
+      .highlight {
+        background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+        padding: 0.2rem 0.5rem;
+        border-radius: 5px;
+        font-weight: bold;
+      }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
+      .fa-medal.gold {
+        color: gold;
+      }
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+      .fa-medal.silver {
+        color: silver;
+      }
 
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-        }
-
-        .prize-card {
-            background: linear-gradient(135deg, #ffd700, #ffed4e);
-            color: #2c3e50;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
-        }
-
-        .prize-amount {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .tracks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .track-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
-
-        .track-card h4 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .testimonial {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 1rem 0;
-            border-left: 4px solid #667eea;
-        }
-
-        .testimonial blockquote {
-            font-style: italic;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial cite {
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .themes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .theme-card {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
-
-        .theme-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .theme-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .faq-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-
-        .faq-question {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer {
-            background: #2c3e50;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .sponsor-logos {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .sponsor-logo {
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            width: 120px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #333;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
-            padding: 0.2rem 0.5rem;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+      .fa-medal.bronze {
+        color: #cd7f32;
+      }
     </style>
-</head>
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo">PraxisForge</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#prizes">Prizes</a></li>
-                <li><a href="#themes">Themes</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
-
+  </head>
+  <body>
     <section class="hero">
-        <div class="container">
-            <h1>Take Your Skills Live: 24-Hour PraxisForge Hackathon</h1>
-            <p class="subtitle">Free for IXP™ students | ₹299 per external team (3–5 members)</p>
-            <p style="font-size: 1.2rem; margin-bottom: 1rem;">📅 July 20–21, 2025 | 10:00 AM – 10:00 AM IST</p>
-            
-            <div class="countdown">
-                <h3>💥 Countdown to Kickoff:</h3>
-                <div class="countdown-timer" id="countdown">00d 12h 34m 56s</div>
-            </div>
+      <div class="container">
+        <h1>Take Your Skills Live: 24-Hour PraxisForge Hackathon</h1>
+        <p class="subtitle">
+          Free for IXP™ students | ₹299 per external team (3–5 members)
+        </p>
+        <p style="font-size: 1.2rem; margin-bottom: 1rem">
+          <i class="fas fa-calendar-alt"></i> July 20–21, 2025 | 10:00 AM –
+          10:00 AM IST
+        </p>
 
-            <div class="cta-buttons">
-                <a href="#register" class="btn btn-primary">Register as IXP™ Participant</a>
-                <a href="#register" class="btn btn-secondary">Register External Team ₹299</a>
-            </div>
-            
-            <p style="margin-top: 2rem; font-size: 1.1rem;">
-                🎁 Early registrants get exclusive hackathon swag and guaranteed mentor check-ins!
-            </p>
+        <div class="countdown">
+          <h3><i class="fas fa-burst"></i> Countdown to Kickoff:</h3>
+          <div class="countdown-timer" id="countdown">00d 12h 34m 56s</div>
         </div>
+
+        <div class="cta-buttons">
+          <a href="#register" class="btn btn-primary"
+            >Register as IXP™ Participant</a
+          >
+          <a href="#register" class="btn btn-secondary"
+            >Register External Team ₹299</a
+          >
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 1.1rem">
+          <i class="fas fa-gift"></i> Early registrants get exclusive hackathon
+          swag and guaranteed mentor check-ins!
+        </p>
+      </div>
     </section>
 
     <div class="main-content">
-        <section class="section" id="about">
-            <div class="container">
-                <h2>Why You Can't Miss This</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🚀</div>
-                        <h3>Real-World Impact</h3>
-                        <p>Work on live briefs from partner startups—see your solution demoed in real pipelines.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🤝</div>
-                        <h3>Network & Learn</h3>
-                        <p>Collaborate with peers and MAANG mentors; earn feedback and LinkedIn shoutouts.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎁</div>
-                        <h3>Exclusive Perks</h3>
-                        <p>First 50 teams receive hackathon swag (tee, stickers, digital badge).</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🏆</div>
-                        <h3>Grand Prize ₹1 Lakh</h3>
-                        <p>Be the team that stands out—fund your next project or treat your friends.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔗</div>
-                        <h3>Career Booster</h3>
-                        <p>Top finalists get direct interviews with hiring partners and feature in our community highlights.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📈</div>
-                        <h3>Community Scale</h3>
-                        <p>Join 200+ participants and 20+ mentors in an epic learning journey.</p>
-                    </div>
-                </div>
+      <section class="section" id="about">
+        <div class="container">
+          <h2>Why You Can't Miss This</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+              <h3>Real-World Impact</h3>
+              <p>
+                Work on live briefs from partner startups—see your solution
+                demoed in real pipelines.
+              </p>
             </div>
-        </section>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+              <h3>Network & Learn</h3>
+              <p>
+                Collaborate with peers and MAANG mentors; earn feedback and
+                LinkedIn shoutouts.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-gift"></i></div>
+              <h3>Exclusive Perks</h3>
+              <p>
+                First 50 teams receive hackathon swag (tee, stickers, digital
+                badge).
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+              <h3>Grand Prize ₹1 Lakh</h3>
+              <p>
+                Be the team that stands out—fund your next project or treat your
+                friends.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-link"></i></div>
+              <h3>Career Booster</h3>
+              <p>
+                Top finalists get direct interviews with hiring partners and
+                feature in our community highlights.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+              <h3>Community Scale</h3>
+              <p>
+                Join 200+ participants and 20+ mentors in an epic learning
+                journey.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="section">
-            <div class="container">
-                <h2>How It Works</h2>
-                <div class="tracks-grid">
-                    <div class="track-card">
-                        <h4>1. Register</h4>
-                        <p>IXP™ students sign up free; externals pay ₹299 per team and get instant access.</p>
-                    </div>
-                    <div class="track-card">
-                        <h4>2. Hack</h4>
-                        <p>Ideate, code, and iterate in 24 hours with mentor check-ins and checkpoints.</p>
-                    </div>
-                    <div class="track-card">
-                        <h4>3. Win & Network</h4>
-                        <p>Demo to judges, win ₹1 Lakh, earn badges, and connect with hiring partners.</p>
-                    </div>
-                </div>
+      <section class="section">
+        <div class="container">
+          <h2>How It Works</h2>
+          <div class="tracks-grid">
+            <div class="track-card">
+              <h4>1. Register</h4>
+              <p>
+                IXP™ students sign up free; externals pay ₹299 per team and get
+                instant access.
+              </p>
             </div>
-        </section>
+            <div class="track-card">
+              <h4>2. Hack</h4>
+              <p>
+                Ideate, code, and iterate in 24 hours with mentor check-ins and
+                checkpoints.
+              </p>
+            </div>
+            <div class="track-card">
+              <h4>3. Win & Network</h4>
+              <p>
+                Demo to judges, win ₹1 Lakh, earn badges, and connect with
+                hiring partners.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="section">
-            <div class="container">
-                <h2>Who Can Participate</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>IXP™ Students</h3>
-                        <p>Instant free entry via your cohort portal.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>External Teams</h3>
-                        <p>Open to all students—register your 3–5 member team for just ₹299.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>All Skill Levels</h3>
-                        <p>From novice coder to advanced hacker—choose challenges that match your strengths.</p>
-                    </div>
-                </div>
+      <section class="section">
+        <div class="container">
+          <h2>Who Can Participate</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <h3>IXP™ Students</h3>
+              <p>Instant free entry via your cohort portal.</p>
             </div>
-        </section>
+            <div class="feature-card">
+              <h3>External Teams</h3>
+              <p>
+                Open to all students—register your 3–5 member team for just
+                ₹299.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>All Skill Levels</h3>
+              <p>
+                From novice coder to advanced hacker—choose challenges that
+                match your strengths.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="section" id="prizes">
-            <div class="container">
-                <h2>Prizes & Recognition</h2>
-                <div class="prize-card">
-                    <div class="prize-amount">₹1,00,000</div>
-                    <p>Total Prize Pool</p>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🥇</div>
-                        <h3>₹50,000 Grand Prize</h3>
-                        <p>To the winning team</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🥈</div>
-                        <h3>₹25,000 Runner-Up</h3>
-                        <p>Second place team</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🥉</div>
-                        <h3>₹20,000 Second Runner-Up</h3>
-                        <p>Third place team</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🏅</div>
-                        <h3>All Teams</h3>
-                        <p>Vouchers + Goodies + Participation Certificate + Digital badges</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📢</div>
-                        <h3>Top 10 Projects</h3>
-                        <p>Featured on PraxisForge website & social media shoutouts</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🤝</div>
-                        <h3>Interview Fast-Track</h3>
-                        <p>Finalists get priority access to partner interviews</p>
-                    </div>
-                </div>
+      <section class="section" id="prizes">
+        <div class="container">
+          <h2>Prizes & Recognition</h2>
+          <div class="prize-card">
+            <div class="prize-amount">₹1,00,000</div>
+            <p>Total Prize Pool</p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🥇</div>
+              <h3>₹50,000 Grand Prize</h3>
+              <p>To the winning team</p>
             </div>
-        </section>
+            <div class="feature-card">
+              <div class="feature-icon">🥈</div>
+              <h3>₹25,000 Runner-Up</h3>
+              <p>Second place team</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🥉</div>
+              <h3>₹20,000 Second Runner-Up</h3>
+              <p>Third place team</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🏅</div>
+              <h3>All Teams</h3>
+              <p>
+                Vouchers + Goodies + Participation Certificate + Digital badges
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📢</div>
+              <h3>Top 10 Projects</h3>
+              <p>Featured on PraxisForge website & social media shoutouts</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🤝</div>
+              <h3>Interview Fast-Track</h3>
+              <p>Finalists get priority access to partner interviews</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="section">
-            <div class="container">
-                <h2>What Past Hackers Say</h2>
-                <div class="testimonial">
-                    <blockquote>"The thrill of the 24h sprint, combined with real mentor feedback, was the highlight of my college journey."</blockquote>
-                    <cite>— Rohit, Pilot Hackathon Winner</cite>
-                </div>
-                <div class="testimonial">
-                    <blockquote>"Winning the grand prize opened doors for me at a top startup—I couldn't have asked for more."</blockquote>
-                    <cite>— Aisha, Data Science Enthusiast</cite>
-                </div>
-            </div>
-        </section>
+      <section class="section">
+        <div class="container">
+          <h2>What Past Hackers Say</h2>
+          <div class="testimonial">
+            <blockquote>
+              "The thrill of the 24h sprint, combined with real mentor feedback,
+              was the highlight of my college journey."
+            </blockquote>
+            <cite>— Rohit, Pilot Hackathon Winner</cite>
+          </div>
+          <div class="testimonial">
+            <blockquote>
+              "Winning the grand prize opened doors for me at a top startup—I
+              couldn't have asked for more."
+            </blockquote>
+            <cite>— Aisha, Data Science Enthusiast</cite>
+          </div>
+        </div>
+      </section>
 
-        <section class="section" id="themes">
-            <div class="container">
-                <h2>Hackathon Themes</h2>
-                <div class="tracks-grid" style="margin-bottom: 2rem;">
-                    <div class="track-card">
-                        <h4>Full-Stack Dev</h4>
-                        <p>Web/mobile apps</p>
-                    </div>
-                    <div class="track-card">
-                        <h4>AI & Automation</h4>
-                        <p>Bots, pipelines</p>
-                    </div>
-                </div>
-                
-                <div class="themes-grid">
-                    <div class="theme-card">
-                        <h4>Dynamic Pricing System (E-commerce)</h4>
-                        <p>Develop an AI engine that adjusts prices in real time based on demand, inventory levels, and competitor rates.</p>
-                    </div>
-                    <div class="theme-card">
-                        <h4>Anomaly Detection in Images & Videos</h4>
-                        <p>Build a computer vision model to identify defects or outliers on assembly lines with high accuracy.</p>
-                    </div>
-                    <div class="theme-card">
-                        <h4>Marketing Automation Platform</h4>
-                        <p>Create an automated campaign manager that segments customers, triggers personalized messages, and tracks engagement metrics.</p>
-                    </div>
-                    <div class="theme-card">
-                        <h4>Edge AI for IoT Devices</h4>
-                        <p>Optimize ML models to run on-device for tasks like energy usage prediction and anomaly alerts.</p>
-                    </div>
-                    <div class="theme-card">
-                        <h4>Personalized Learning Recommendation</h4>
-                        <p>Recommend tailored learning paths based on student performance data.</p>
-                    </div>
-                    <div class="theme-card">
-                        <h4>Supply Chain Optimization</h4>
-                        <p>Model and solve routing and inventory allocation to minimize time and cost.</p>
-                    </div>
-                    <div class="theme-card">
-                        <h4>Healthcare Predictive Analytics</h4>
-                        <p>Predict patient readmission risks using EMR data and suggest interventions.</p>
-                    </div>
-                    <div class="theme-card">
-                        <h4>Smart City Traffic Management</h4>
-                        <p>Create an AI system to optimize traffic signal timing and reduce congestion using live data.</p>
-                    </div>
-                    <div class="theme-card">
-                        <h4>AI-Powered Code Review Assistant</h4>
-                        <p>Develop a tool that analyzes pull requests and suggests improvements automatically.</p>
-                    </div>
-                    <div class="theme-card">
-                        <h4>Sustainable Energy Forecasting</h4>
-                        <p>Forecast renewable energy production (solar/wind) using weather and historical performance data.</p>
-                    </div>
-                </div>
+      <section class="section" id="themes">
+        <div class="container">
+          <h2>Hackathon Themes</h2>
+          <div class="tracks-grid" style="margin-bottom: 2rem">
+            <div class="track-card">
+              <h4>Full-Stack Dev</h4>
+              <p>Web/mobile apps</p>
             </div>
-        </section>
+            <div class="track-card">
+              <h4>AI & Automation</h4>
+              <p>Bots, pipelines</p>
+            </div>
+          </div>
 
-        <section class="section">
-            <div class="container">
-                <h2>Mentor Access & Workshops</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>Pre-Hackathon Workshop</h3>
-                        <p>Live sessions on ideation & tools to get you started.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Mentor Office Hours</h3>
-                        <p>Dedicated slots every day hours for live Q&A</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Demo Coaching</h3>
-                        <p>1-on-1 tips to polish your final presentation</p>
-                    </div>
-                </div>
+          <div class="themes-grid">
+            <div class="theme-card">
+              <h4>Dynamic Pricing System (E-commerce)</h4>
+              <p>
+                Develop an AI engine that adjusts prices in real time based on
+                demand, inventory levels, and competitor rates.
+              </p>
             </div>
-        </section>
+            <div class="theme-card">
+              <h4>Anomaly Detection in Images & Videos</h4>
+              <p>
+                Build a computer vision model to identify defects or outliers on
+                assembly lines with high accuracy.
+              </p>
+            </div>
+            <div class="theme-card">
+              <h4>Marketing Automation Platform</h4>
+              <p>
+                Create an automated campaign manager that segments customers,
+                triggers personalized messages, and tracks engagement metrics.
+              </p>
+            </div>
+            <div class="theme-card">
+              <h4>Edge AI for IoT Devices</h4>
+              <p>
+                Optimize ML models to run on-device for tasks like energy usage
+                prediction and anomaly alerts.
+              </p>
+            </div>
+            <div class="theme-card">
+              <h4>Personalized Learning Recommendation</h4>
+              <p>
+                Recommend tailored learning paths based on student performance
+                data.
+              </p>
+            </div>
+            <div class="theme-card">
+              <h4>Supply Chain Optimization</h4>
+              <p>
+                Model and solve routing and inventory allocation to minimize
+                time and cost.
+              </p>
+            </div>
+            <div class="theme-card">
+              <h4>Healthcare Predictive Analytics</h4>
+              <p>
+                Predict patient readmission risks using EMR data and suggest
+                interventions.
+              </p>
+            </div>
+            <div class="theme-card">
+              <h4>Smart City Traffic Management</h4>
+              <p>
+                Create an AI system to optimize traffic signal timing and reduce
+                congestion using live data.
+              </p>
+            </div>
+            <div class="theme-card">
+              <h4>AI-Powered Code Review Assistant</h4>
+              <p>
+                Develop a tool that analyzes pull requests and suggests
+                improvements automatically.
+              </p>
+            </div>
+            <div class="theme-card">
+              <h4>Sustainable Energy Forecasting</h4>
+              <p>
+                Forecast renewable energy production (solar/wind) using weather
+                and historical performance data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="section" id="faq">
-            <div class="container">
-                <h2>Frequently Asked Questions</h2>
-                <div class="faq-item">
-                    <div class="faq-question">Q: Can I join solo?</div>
-                    <div class="faq-answer">A: Yes—solo hackers are placed into teams to maximize learning.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Q: What if I can't code?</div>
-                    <div class="faq-answer">A: Beginner-friendly tracks & mentor support ensure everyone contributes.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Q: How do I get my swag kit?</div>
-                    <div class="faq-answer">A: IXP™ students receive it automatically; external teams get shipping details post-registration.</div>
-                </div>
+      <section class="section">
+        <div class="container">
+          <h2>Mentor Access & Workshops</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <h3>Pre-Hackathon Workshop</h3>
+              <p>Live sessions on ideation & tools to get you started.</p>
             </div>
-        </section>
+            <div class="feature-card">
+              <h3>Mentor Office Hours</h3>
+              <p>Dedicated slots every day hours for live Q&A</p>
+            </div>
+            <div class="feature-card">
+              <h3>Demo Coaching</h3>
+              <p>1-on-1 tips to polish your final presentation</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="section" id="register" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center;">
-            <div class="container">
-                <h2 style="color: white;">Ready to hack your way to ₹1 Lakh and beyond?</h2>
-                <p style="font-size: 1.3rem; margin-bottom: 2rem;">Register now and let your ideas take flight!</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">Register as IXP™ Participant</a>
-                    <a href="#" class="btn btn-secondary">Register External Team ₹299</a>
-                </div>
+      <section class="section" id="faq">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <div class="faq-question">Q: Can I join solo?</div>
+            <div class="faq-answer">
+              A: Yes—solo hackers are placed into teams to maximize learning.
             </div>
-        </section>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Q: What if I can't code?</div>
+            <div class="faq-answer">
+              A: Beginner-friendly tracks & mentor support ensure everyone
+              contributes.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Q: How do I get my swag kit?</div>
+            <div class="faq-answer">
+              A: IXP™ students receive it automatically; external teams get
+              shipping details post-registration.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="register"
+        style="
+          background: linear-gradient(135deg, #002a70, #004bb5);
+          color: white;
+          text-align: center;
+        "
+      >
+        <div class="container">
+          <h2 style="color: white">
+            Ready to hack your way to ₹1 Lakh and beyond?
+          </h2>
+          <p style="font-size: 1.3rem; margin-bottom: 2rem">
+            Register now and let your ideas take flight!
+          </p>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">Register as IXP™ Participant</a>
+            <a href="#" class="btn btn-secondary"
+              >Register External Team ₹299</a
+            >
+          </div>
+        </div>
+      </section>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <h3>Sponsors & Partners</h3>
-            <div class="sponsor-logos">
-                <div class="sponsor-logo">Partner 1</div>
-                <div class="sponsor-logo">Partner 2</div>
-                <div class="sponsor-logo">Partner 3</div>
-                <div class="sponsor-logo">Partner 4</div>
-            </div>
-            <p>&copy; 2025 PraxisForge. All rights reserved.</p>
-        </div>
-    </footer>
-
     <script>
-        // Countdown Timer
-        function updateCountdown() {
-            const targetDate = new Date('2025-07-20T10:00:00+05:30');
-            const now = new Date();
-            const timeDiff = targetDate - now;
+      // Countdown Timer
+      function updateCountdown() {
+        const targetDate = new Date("2025-07-20T10:00:00+05:30");
+        const now = new Date();
+        const timeDiff = targetDate - now;
 
-            if (timeDiff > 0) {
-                const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+        if (timeDiff > 0) {
+          const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeDiff % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-                document.getElementById('countdown').textContent = 
-                    `${days.toString().padStart(2, '0')}d ${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
-            } else {
-                document.getElementById('countdown').textContent = 'Hackathon Started!';
-            }
+          document.getElementById("countdown").textContent = `${days
+            .toString()
+            .padStart(2, "0")}d ${hours.toString().padStart(2, "0")}h ${minutes
+            .toString()
+            .padStart(2, "0")}m ${seconds.toString().padStart(2, "0")}s`;
+        } else {
+          document.getElementById("countdown").textContent =
+            "Hackathon Started!";
         }
+      }
 
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+      // Update countdown every second
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
         });
+      });
     </script>
-</body>
+  </body>
 </html>
